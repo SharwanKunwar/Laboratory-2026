@@ -1,16 +1,35 @@
-# React + Vite
+# Life Journey - Frontend Documentation
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 1. Project Overview
+**Life Journey** is a web application that allows users to record, organize, and view their life events. Each event can include:  
 
-Currently, two official plugins are available:
+- **Title** – a short, descriptive name for the event  
+- **Date & Location** – when and where the event happened  
+- **Notes** – a short description or personal note  
+- **Images** – optional photos related to the event  
+- **Tags** – keywords for categorization and search  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The goal is to provide a personal timeline where users can reflect on and track life experiences.  
 
-## React Compiler
+---
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+## 2. Technology Stack
+- **Frontend Framework:** React.js  
+- **Styling:** Tailwind CSS  
+- **Animations:** Framer Motion  
+- **UI Components:** Ant Design (antd)  
+- **Additional Libraries:**  
+  - `react-router-dom` – for routing  
+  - `axios` – for API calls  
+  - `react-datepicker` – for selecting dates  
+  - `react-dropzone` – for image uploads  
+  - `uuid` – for unique IDs  
+  - `moment` – for date formatting  
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+
+#### Conclusion
+
+The frontend leverages React.js, Tailwind, Ant Design, and Framer Motion to provide an intuitive and interactive interface for tracking personal life events. Its modular structure allows for easy scalability, feature additions, and future integration with backend services.
