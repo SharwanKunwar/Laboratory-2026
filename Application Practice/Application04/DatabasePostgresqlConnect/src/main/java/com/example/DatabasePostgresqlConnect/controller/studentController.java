@@ -21,4 +21,5 @@ public class studentController {
     public List<studentEntity> getStudent(){
         return studentRepository.findAll();
     }
+
 }
