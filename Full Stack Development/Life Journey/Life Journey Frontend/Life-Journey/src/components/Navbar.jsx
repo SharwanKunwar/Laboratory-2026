@@ -50,7 +50,7 @@ function Navbar() {
 
   return (
     <>
-      <div className='bg-gray-400/30 backdrop-blur-sm w-full h-[70px] absolute flex justify-center items-center shadow'>
+      <div className='bg-gray-400/30 backdrop-blur-sm w-full h-[70px] absolute flex justify-center items-center shadow z-50'>
         
         {/* left */}
         <div className='w-[50%] flex items-center px-10 gap-3'>

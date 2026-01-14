@@ -39,10 +39,10 @@ function DisplayEvent() {
 
   return (
     <>
-      <div className='w-full h-full flex gap-3'>
+      <div className='w-full h-full flex gap-0'>
 
         {/* LEFT SIDE - FILTER */}
-        <div className='bg-gray-100 w-[25%] h-full p-4'>
+        <div className='bg-gray-100 w-[25%] h-full p-4 pt-20'>
           <h2 className='text-lg font-semibold mb-4'>Filter Events</h2>
 
           <select
@@ -58,7 +58,7 @@ function DisplayEvent() {
         </div>
 
         {/* RIGHT SIDE - EVENTS */}
-        <div className='bg-gray-50 w-[75%] h-full p-5 grid grid-cols-1 gap-4 overflow-y-auto'>
+        <div className='bg-gray-50 w-[75%] h-full p-5 grid grid-cols-1 gap-4 overflow-y-auto pt-20'>
 
           {filteredEvents.length === 0 && (
             <p>No events found</p>
