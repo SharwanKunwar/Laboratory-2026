@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { Button } from 'antd'
+import RapCard from '../components/RapCard'
 
 function DisplayEvent() {
 
@@ -39,7 +40,7 @@ function DisplayEvent() {
 
   return (
     <>
-      <div className='w-full h-full flex gap-0'>
+      <div className='w-full h-full flex'>
 
         {/* LEFT SIDE - FILTER */}
         <div className='bg-gray-100 w-[25%] h-full p-4 pt-20'>
@@ -64,34 +65,10 @@ function DisplayEvent() {
             <p>No events found</p>
           )}
 
-          {filteredEvents.map(event => (
-            <div
-              key={event.id}
-              className='bg-white p-4 rounded shadow hover:shadow-lg transition w-full mb-3'
-            >
-
-            {/* //images */}
-            <div className=' h-[400px] flex gap-1'>
-                <div className=' w-[70%] h-full'>
-                    <img src="/img/pic01.jpg" alt="img" className='w-full h-[101%] object-cover rounded-sm'/>
-                </div>
-                <div className='w-[30%] h-full flex flex-col gap-1'>
-                    <div className='h-[50%]'><img src="/img/pic01.jpg" alt="img" className='w-full h-full object-cover rounded-sm'/></div>
-                    <div className='h-[50%]'><img src="/img/pic01.jpg" alt="img" className='w-full h-full object-cover rounded-sm'/></div>
-                </div>        
-            </div>
-
-              <h3 className='text-lg font-bold mt-5'>{event.title}</h3>
-              <p className='text-sm text-gray-600 mt-1'>{event.description}</p>
-
-              <Button size='large' className='px-20! mt-4!'>View Details</Button>
-
-              <div className='text-sm mt-5'>
-                <p>📍 {event.location}</p>
-                <p>📅 {event.date}</p>
-              </div>
-            </div>
+          {filteredEvents.map((event, index) => (
+            <RapCard key={index} name={event.title} des={event.description} location={event.location} date={event.date}/>
           ))}
+
 
         </div>
       </div>
