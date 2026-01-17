@@ -14,7 +14,7 @@ public class EventEntity {
 
     private String title;
 
-    @Column(length = 500)
+    @Column(length = 1000)
     private String description;
 
     private LocalDate date;
