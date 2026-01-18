@@ -3,16 +3,16 @@ import React from 'react'
 function Navbar() {
   return (
     <>
-        <div className='bg-gray-50 w-full h-[60px] absolute top-0 shadow flex gap-3'>
+        <div className='bg-gray-50 w-full h-[60px] absolute top-0 shadow flex gap-3 px-5'>
 
             {/* left  */}
-            <div className=' w-[50%] flex items-center px-5 gap-3'>
+            <div className=' w-[50%] flex items-center  gap-3'>
                 <img src="vite.svg" alt="logo" className='bg-white p-2 rounded-sm'/>
                 <h1 className='text-xl'>Rap<span className='text-yellow-400 font-medium'>Book</span></h1>
             </div>
 
             {/* right  */}
-            <div className=' w-[50%] flex justify-end gap-5 items-center px-5'>
+            <div className=' w-[50%] flex justify-end gap-5 items-center'>
                 <ul className='flex justify-around items-center h-full gap-5 w-[35%]'>
                     <li className='hover:text-indigo-400 '>Home</li>
                     <li className='hover:text-indigo-400 '>Contact</li>
