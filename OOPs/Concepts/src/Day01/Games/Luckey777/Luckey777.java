@@ -6,22 +6,41 @@ import java.util.Scanner;
 
 public class Luckey777 {
     static void main(String[] args) {
-
-
-
-
         Scanner sc = new Scanner(System.in);
-        while (p1.Amount != 0){
-            Random random = new Random();
-            int randomNumber1 = (int) Math.floor(Math.random() * 3 );
-            int randomNumber2 = (int) Math.floor(Math.random() * 3 );
-            int randomNumber3 = (int) Math.floor(Math.random() * 3 );
-            Player p1 = new Player("Sharwan jung kunwar","sharwankunwar07@gmail.com",100L,randomNumber1,randomNumber2,randomNumber3);
-            System.out.println("Enter your bet: ");
-            int bet = sc.nextInt();
-            p1.bet(bet);
-            p1.play();
-            p1.result();
+        String[] slot = {"7️⃣","👻","👽"};
+        boolean isWin = false;
+        long amount = 100L;
+        int bet=0;
+
+        Random random = new Random();
+
+        while(amount!=0){
+            int rand01 = (int) Math.floor(Math.random()*3);
+            int rand02 = (int) Math.floor(Math.random()*3);
+            int rand03 = (int) Math.floor(Math.random()*3);
+
+            System.out.print("Enter your bet: ");
+            bet = sc.nextInt();
+
+            if(rand01==rand02&&rand01==rand03){
+                amount+=(bet+bet);
+                System.out.println("\n");
+                System.out.println("---------------------------------------------------------");
+                System.out.println("\t\t"+slot[rand01]+" "+slot[rand02]+" "+slot[rand03]);
+                System.out.println("---------------------------------------------------------");
+                System.out.println("You did well !!");
+                System.out.println("you win and your total amount is: "+amount);
+            }else {
+                amount-=bet;
+                System.out.println("\n");
+                System.out.println("---------------------------------------------------------");
+                System.out.println("\t\t"+slot[rand01]+" "+slot[rand02]+" "+slot[rand03]);
+                System.out.println("---------------------------------------------------------");
+                System.out.println("You lost bet Try again wth "+amount);
+            }
+            if(amount==0) System.out.println("You lost your all money\ntry better next time");
+
         }
+
     }
 }
