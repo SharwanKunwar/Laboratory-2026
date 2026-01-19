@@ -1,46 +1,53 @@
 package Day01.Games.Luckey777;
 
-import javax.swing.plaf.basic.BasicInternalFrameTitlePane;
 import java.util.Random;
 import java.util.Scanner;
 
 public class Luckey777 {
-    static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        String[] slot = {"7️⃣","👻","👽"};
-        boolean isWin = false;
-        long amount = 100L;
-        int bet=0;
 
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
         Random random = new Random();
 
-        while(amount!=0){
-            int rand01 = (int) Math.floor(Math.random()*3);
-            int rand02 = (int) Math.floor(Math.random()*3);
-            int rand03 = (int) Math.floor(Math.random()*3);
+        String[] slot = {"7️⃣", "👻", "👽"};
+        long amount = 100L;
+        int bet;
 
+        while (amount > 0) {
+
+            System.out.println("\nCurrent Balance: " + amount);
             System.out.print("Enter your bet: ");
             bet = sc.nextInt();
 
-            if(rand01==rand02&&rand01==rand03){
-                amount+=(bet+bet);
-                System.out.println("\n");
-                System.out.println("---------------------------------------------------------");
-                System.out.println("\t\t"+slot[rand01]+" "+slot[rand02]+" "+slot[rand03]);
-                System.out.println("---------------------------------------------------------");
-                System.out.println("You did well !!");
-                System.out.println("you win and your total amount is: "+amount);
-            }else {
-                amount-=bet;
-                System.out.println("\n");
-                System.out.println("---------------------------------------------------------");
-                System.out.println("\t\t"+slot[rand01]+" "+slot[rand02]+" "+slot[rand03]);
-                System.out.println("---------------------------------------------------------");
-                System.out.println("You lost bet Try again wth "+amount);
-            }
-            if(amount==0) System.out.println("You lost your all money\ntry better next time");
 
+
+            if (bet <= 0 ) {
+                System.out.println("❌ Invalid bet! please enter positive");
+            } else if( bet > amount){
+                System.out.println("\n💀 Game Over! You lost all your money.");
+                return;
+            }
+
+
+            int r1 = random.nextInt(3);
+            int r2 = random.nextInt(3);
+            int r3 = random.nextInt(3);
+
+            System.out.println("\n\n\n\n\nc-----------------------------------------");
+            System.out.println("\t\t" + slot[r1] + " " + slot[r2] + " " + slot[r3]);
+            System.out.println("-----------------------------------------");
+
+            if (r1 == r2 && r1 == r3) {
+                amount += bet * 3;
+                System.out.println("🎉 YOU WIN!");
+            } else {
+                amount -= bet;
+                System.out.println("❌ You lost!");
+            }
         }
 
+        System.out.println("\n💀 Game Over! You lost all your money.");
+        sc.close();
     }
 }
