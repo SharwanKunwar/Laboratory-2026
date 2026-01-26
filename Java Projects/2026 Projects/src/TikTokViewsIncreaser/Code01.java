@@ -9,7 +9,7 @@ public class Code01 {
         try {
             // 1️⃣ Open TikTok video in default browser
             Desktop.getDesktop().browse(
-                    new URI("https://www.tiktok.com/@sharwan.kunwar/video/7599579248126397716?is_from_webapp=1&sender_device=pc&web_id=7599599174305678866")
+                    new URI("https://www.tiktok.com/@rupesh0_2/video/7593671647035510023?is_from_webapp=1&sender_device=pc&web_id=7599599174305678866")
             );
 
             // 2️⃣ Wait for browser and video to load
@@ -19,16 +19,16 @@ public class Code01 {
             Robot robot = new Robot();
 
             // 4️⃣ Loop scroll up & down
-            for (int i = 0; i < 5; i++) {  // loop 5 times
+            for (int i = 0; i < 100; i++) {  // loop 5 times
                 // Scroll DOWN (next video)
                 robot.mouseWheel(5);
                 System.out.println("Scrolled down to next video");
-                Thread.sleep(3000); // wait 3 seconds
+                Thread.sleep(1000); // wait 3 seconds
 
                 // Scroll UP (back to original video)
                 robot.mouseWheel(-5);
                 System.out.println("Scrolled up to previous video");
-                Thread.sleep(3000); // wait 3 seconds
+                Thread.sleep(1000); // wait 3 seconds
             }
 
             System.out.println("Done scrolling up and down!");
