@@ -13,5 +13,6 @@ public class Code01 {
 
         Dog d1 = new Dog("mar","white","domestic",2,"hight",true);
         d1.nature();
+
     }
 }

@@ -1,11 +1,11 @@
 package Inheritence.Example03;
 
 public class Animal {
-    String name;
-    String color;
-    String type;
-    int age;
-    String breed;
+    private String name;
+    private String color;
+    private String type;
+    private int age;
+    private String breed;
 
     public Animal(String name, String color, String type, int age, String breed) {
         this.name = name;
