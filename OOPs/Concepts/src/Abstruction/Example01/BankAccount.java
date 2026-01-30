@@ -33,7 +33,7 @@ abstract public class BankAccount {
 
     //check balance
     public void checkBalance() {
-        System.out.println("Balance of "+this.accountNumber+" A/C is  Rs "+this.balance);
+        System.out.println("Balance of "+this.accountNumber+" A/C is Rs "+this.balance);
     }
 
     //interest method

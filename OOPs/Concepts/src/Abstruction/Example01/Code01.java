@@ -12,5 +12,12 @@ public class Code01 {
         BankAccount b1 = new SavingAccount(70123435349L,1000);
         b1.interest();
         b1.checkBalance();
+
+        System.out.println("--------------------------------------------------------------");
+        BankAccount kid01 = new KidsAccount(8787898765L,100);
+        kid01.interest();
+        kid01.withdraw(10);
+        kid01.checkBalance();
+
     }
 }
