@@ -2,6 +2,9 @@ package JavaLab.Lab03;
 
 import java.util.Scanner;
 
+
+// Write a java program to input two number and arithmetic operator from user and perform all arithmetic operation (+,-,*,/,%) using switch case statement.
+
 public class Code05 {
     static void main(String[] args) {
         Scanner input = new Scanner(System.in);

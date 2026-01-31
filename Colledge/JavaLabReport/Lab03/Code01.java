@@ -2,6 +2,8 @@ package JavaLab.Lab03;
 
 import java.util.Scanner;
 
+// Write a java program to test whether input number is odd or even.
+
 public class Code01 {
     static void main(String[] args) {
         Scanner sc  = new Scanner(System.in);

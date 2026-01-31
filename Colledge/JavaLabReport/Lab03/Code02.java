@@ -2,6 +2,8 @@ package JavaLab.Lab03;
 
 import java.util.Scanner;
 
+// Write a java program to test given number is positive or negative or Zero
+
 public class Code02 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);

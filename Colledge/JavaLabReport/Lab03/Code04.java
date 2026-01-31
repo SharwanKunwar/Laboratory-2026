@@ -2,6 +2,8 @@ package JavaLab.Lab03;
 
 import java.util.Scanner;
 
+// Write a java program to check input number is odd and divisible by three or even and divisible by three using nested if else statement.
+
 public class Code04 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
