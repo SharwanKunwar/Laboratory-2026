@@ -7,11 +7,7 @@ public class Code01 {
         v1.turnRight();
         v1.horn();
         v1.applyBreaks();
-        System.out.println("-------------------------------------------------");
-        Vehicle v2 = new Bus("nisan","GTR","blue",300);
-        v2.start();
-        v2.turnRight();
-        v2.horn();
-        v2.applyBreaks();
+
+
     }
 }
