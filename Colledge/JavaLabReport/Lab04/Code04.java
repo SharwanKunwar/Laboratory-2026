@@ -33,7 +33,7 @@ public class Code04 {
             sum+=(int)Math.pow(digit,count);
         }
 
-        if(org == sum) System.out.println("perfect number");
-        else System.out.println("not perfect number");
+        if(org == sum) System.out.println("Armstrong");
+        else System.out.println("not Armstrong number");
     }
 }

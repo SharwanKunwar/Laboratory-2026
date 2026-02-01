@@ -1,4 +1,4 @@
-
+package PracticeCode;
 
 public class code003 {
     public static void main(String[] args) {
