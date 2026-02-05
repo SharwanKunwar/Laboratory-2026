@@ -43,6 +43,11 @@ public class LibraryManagementSystem {
                         System.out.print("\nBook Name: ");
                         String bookName = input.nextLine();
 
+                        System.out.print("Book ID: ");
+                        int  bookId = input.nextInt();
+
+                        input.nextLine();   // buffer
+
                         System.out.print("Author: ");
                         String author = input.nextLine();
 
@@ -58,7 +63,7 @@ public class LibraryManagementSystem {
                         System.out.print("Price: ");
                         int price = Integer.parseInt(input.nextLine());
 
-                        Book b1 = new Book(bookName, author, category, status, pages, price);
+                        Book b1 = new Book(bookId,bookName, author, category, status, pages, price);
                         l1.addBook(b1);
                         System.out.print("\nWanna add more (y/n) : ");
                         char addMore = input.next().charAt(0);
@@ -73,7 +78,12 @@ public class LibraryManagementSystem {
 
                 case 2:
                     newLine(40);
-                    System.out.println("case 2");
+                    System.out.println("-------------------- Removing Books -----");
+                    System.out.print("Enter The book ID: ");
+                    int Id = input.nextInt();
+                    System.out.println("-----------------------------------------");
+                    l1.deleteBook(Id);
+
                     break;
                 case 3:
                     newLine(40);
@@ -85,21 +95,11 @@ public class LibraryManagementSystem {
                     break;
                 case 5:
                     newLine(40);
-                    int count = 0;
                     System.out.println("-------------------- Displaying Books -----");
                     if(l1.bookList.isEmpty()) {
                         System.out.println("\nNo books in the library");
                     }
-                    for(Book book : l1.bookList){
-                        count++;
-                        System.out.println("\n----------------- Book count "+count+" ---");
-                        System.out.println("Name: "+book.name);
-                        System.out.println("Author: "+book.author);
-                        System.out.println("Category: "+book.category);
-                        System.out.println("Status: "+book.status);
-                        System.out.println("Pages: "+book.pages);
-                        System.out.println("Price: "+book.price);
-                    }
+                    l1.displayBooks();
                     newLine(2);
 
                     break;

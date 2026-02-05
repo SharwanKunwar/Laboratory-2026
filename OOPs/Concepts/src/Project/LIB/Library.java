@@ -1,6 +1,7 @@
 package Project.LIB;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class Library {
@@ -11,10 +12,36 @@ public class Library {
     void addBook(Book book) {
         bookList.add(book);
     }
-    //Delete book method
-    void deleteBook(Book book) {
-        System.out.println("deleting book");
+
+    void deleteBook(int id) {
+        Iterator<Book> iterator = bookList.iterator();
+        boolean found = false;
+
+        while (iterator.hasNext()) {
+            Book book = iterator.next();
+
+            if (book.getId() == id) {
+                System.out.println("Name: " + book.getName());
+                System.out.println("Author: " + book.getAuthor());
+                System.out.println("Category: " + book.getCategory());
+                System.out.println("Status: " + book.status);
+                System.out.println("Pages: " + book.getPages());
+                System.out.println("Price: " + book.getPrice());
+
+                iterator.remove(); // ✅ DELETE HERE
+                found = true;
+                System.out.println("Book Deleted Successfully");
+                break;
+            }
+        }
+
+        if (!found) {
+            System.out.println("Book not found!");
+        }
     }
+
+
+
     //Update book
     void updateBook(Book book) {
         System.out.println("updating book");
@@ -28,9 +55,17 @@ public class Library {
         System.out.println("returning book");
     }
     void displayBooks() {
-        System.out.println("displaying books----------");
-        for(Book book : bookList) {
-            System.out.println(book);
+        int count = 0;
+        for(Book book : bookList){
+            count++;
+            System.out.println("\n----------------- Book count "+count+" ---");
+            System.out.println("Book ID: "+book.getId());
+            System.out.println("Name: "+book.getName());
+            System.out.println("Author: "+book.getAuthor());
+            System.out.println("Category: "+book.getCategory());
+            System.out.println("Status: "+book.status);
+            System.out.println("Pages: "+book.getPages());
+            System.out.println("Price: "+book.getPrice());
         }
     }
 }
