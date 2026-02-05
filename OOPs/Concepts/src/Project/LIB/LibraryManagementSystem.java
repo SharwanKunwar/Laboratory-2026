@@ -35,28 +35,40 @@ public class LibraryManagementSystem {
                     break;
                 case 1:
                     newLine(40);
+                    boolean more = true;
                     System.out.println("----------------------------------- Adding Book -----");
-                    input.nextLine();
-                    System.out.print("Enter Book: ");
-                    String bookName = input.nextLine();
 
-                    System.out.print("Author: ");
-                    String author = input.nextLine();
+                    do{
+                        input.nextLine();
+                        System.out.print("\nBook Name: ");
+                        String bookName = input.nextLine();
 
-                    System.out.print("Category: ");
-                    String category = input.nextLine();
+                        System.out.print("Author: ");
+                        String author = input.nextLine();
 
-                    System.out.print("Status (true/false): ");
-                    boolean status = Boolean.parseBoolean(input.nextLine());
+                        System.out.print("Category: ");
+                        String category = input.nextLine();
 
-                    System.out.print("Pages: ");
-                    int pages = Integer.parseInt(input.nextLine());
+                        System.out.print("Status (true/false): ");
+                        boolean status = Boolean.parseBoolean(input.nextLine());
 
-                    System.out.print("Price: ");
-                    int price = Integer.parseInt(input.nextLine());
+                        System.out.print("Pages: ");
+                        int pages = Integer.parseInt(input.nextLine());
 
-                    Book b1 = new Book(bookName, author, category, status, pages, price);
-                    l1.addBook(b1);
+                        System.out.print("Price: ");
+                        int price = Integer.parseInt(input.nextLine());
+
+                        Book b1 = new Book(bookName, author, category, status, pages, price);
+                        l1.addBook(b1);
+                        System.out.print("\nWanna add more (y/n) : ");
+                        char addMore = input.next().charAt(0);
+                        if(addMore == 'n' || addMore == 'N'){
+                            more = false;
+                        }
+
+
+                    }while(more);
+
                     break;
 
                 case 2:
