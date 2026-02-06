@@ -5,18 +5,26 @@ public class Book{
     private String name;
     private String author;
     private String category;
-    boolean status;
+    String status = "Available";
+    private String issuedTo = "None";
     private int pages;
     private int price;
 
-    Book(long id,String name, String author, String category, boolean status, int pages, int price) {
+    Book(long id,String name, String author, String category, int pages, int price) {
         this.id = id;
         this.name = name;
         this.author = author;
         this.category = category;
-        this.status = status;
         this.pages = pages;
         this.price = price;
+    }
+
+    public String getIssuedTo() {
+        return issuedTo;
+    }
+
+    public void setIssuedTo(String issuedTo) {
+        this.issuedTo = issuedTo;
     }
 
     public long getId() {
@@ -35,7 +43,7 @@ public class Book{
         return category;
     }
 
-    public boolean isStatus() {
+    public String isStatus() {
         return status;
     }
 

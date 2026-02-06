@@ -54,8 +54,6 @@ public class LibraryManagementSystem {
                         System.out.print("Category: ");
                         String category = input.nextLine();
 
-                        System.out.print("Status (true/false): ");
-                        boolean status = Boolean.parseBoolean(input.nextLine());
 
                         System.out.print("Pages: ");
                         int pages = Integer.parseInt(input.nextLine());
@@ -63,7 +61,7 @@ public class LibraryManagementSystem {
                         System.out.print("Price: ");
                         int price = Integer.parseInt(input.nextLine());
 
-                        Book b1 = new Book(bookId,bookName, author, category, status, pages, price);
+                        Book b1 = new Book(bookId,bookName, author, category, pages, price);
                         l1.addBook(b1);
                         System.out.print("\nWanna add more (y/n) : ");
                         char addMore = input.next().charAt(0);
@@ -78,6 +76,10 @@ public class LibraryManagementSystem {
 
                 case 2:
                     newLine(40);
+                    if(l1.bookList.isEmpty()){
+                        System.out.println("There are no Books in the Library");
+                        break;
+                    }
                     System.out.println("-------------------- Removing Books -----");
                     System.out.print("Enter The book ID: ");
                     int Id = input.nextInt();
@@ -87,7 +89,21 @@ public class LibraryManagementSystem {
                     break;
                 case 3:
                     newLine(40);
-                    System.out.println("case 3");
+                    if(l1.bookList.isEmpty()){
+                        System.out.println("There are no Books in the Library");
+                        break;
+                    }
+                    System.out.println("------------------------- Issue Book -----");
+                    System.out.print("Enter The book ID: ");
+                    int issueBookId = input.nextInt();
+
+                    input.nextLine();
+
+                    System.out.print("Issue to whom : ");
+                    String issueTo = input.nextLine();
+
+                    l1.issueBook(issueBookId, issueTo);
+
                     break;
                 case 4:
                     newLine(40);
