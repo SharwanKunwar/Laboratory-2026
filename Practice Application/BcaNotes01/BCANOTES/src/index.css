@@ -1,11 +1,13 @@
 @import 'tailwindcss';
 
-/* For vertical scroll */
-.hide-scrollbar::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Edge */
+/* Hide scrollbars but keep scrolling functional */
+.hide-scrollbar {
+  -ms-overflow-style: none; /* IE 10+ */
+  scrollbar-width: none; /* Firefox */
+   scroll-behavior: smooth;
 }
 
-.hide-scrollbar {
-  -ms-overflow-style: none;  /* IE 10+ */
-  scrollbar-width: none;     /* Firefox */
+.hide-scrollbar::-webkit-scrollbar {
+  width: 0;
+  height: 0;
 }

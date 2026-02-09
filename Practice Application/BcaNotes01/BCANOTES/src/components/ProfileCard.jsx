@@ -6,7 +6,7 @@ function ProfileCard() {
     <>
         <div className='bg-gray-200 w-full h-full rounded-sm shadow-md p-2 py-3'>
             <div className='flex gap-3 items-center'>
-                <img src="/vite.svg" alt="" className='p-2 bg-indigo-400 rounded-full'/>
+                <img src="/vite.svg" alt="" className='p-2 bg-indigo-400 border border-white shadow rounded-full'/>
                 <section>
                     <h1 className='text-lg tracking-tight font-medium'>Sharwan jung kunwar</h1>
                     <p className='text-neutral-400'>Semister III</p>
