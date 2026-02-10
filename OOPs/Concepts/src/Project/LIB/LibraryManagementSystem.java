@@ -99,10 +99,8 @@ public class LibraryManagementSystem {
 
                     input.nextLine();
 
-                    System.out.print("Issue to whom : ");
-                    String issueTo = input.nextLine();
 
-                    l1.issueBook(issueBookId, issueTo);
+                    l1.issueBook(issueBookId);
 
                     break;
                 case 4:

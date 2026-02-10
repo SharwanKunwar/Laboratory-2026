@@ -3,6 +3,7 @@ package Project.LIB;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Scanner;
 
 public class Library {
 
@@ -48,18 +49,30 @@ public class Library {
     }
 
     //Issue book
-    void issueBook(int id, String name) {
+    void issueBook(int id) {
+        String issueTo = "";
+        boolean found = false;
+        Scanner input = new Scanner(System.in);
         for(Book book : bookList) {
+
             if (book.getId() == id) {
                 book.status = "Not available";
-                book.setIssuedTo(name);
+                System.out.print("Issue to whom : ");
+                issueTo = input.nextLine();
+                input.close();
+                book.setIssuedTo(issueTo);
+                found = true;
             }
         }
-        for(Book book : bookList) {
-            System.out.println("\nBook "+book.getName()+"\nIssued to "+name);
-            break;
+        // check found or not
+        if (found) {
+            for(Book book : bookList) {
+                System.out.println("\nBook "+book.getName()+"\nIssued to "+issueTo);
+                break;
+            }
+        }else{
+            System.out.println("Book ID: " + id+ " is not found");
         }
-
     }
 
     //return book
