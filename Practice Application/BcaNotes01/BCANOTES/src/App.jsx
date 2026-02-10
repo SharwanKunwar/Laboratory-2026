@@ -1,5 +1,5 @@
 import React from 'react'
-import { FiHome, FiBook, FiFileText, FiUser, FiSettings,FiAward,FiGrid,FiBookOpen    } from 'react-icons/fi'
+import { FiHome, FiBook, FiFileText, FiUser, FiSettings,FiAward,FiGrid,FiBookOpen , FiMail   } from 'react-icons/fi'
 import ProfileCard from './components/ProfileCard'
 import Dashboard from './pages/Dashboard'
 
@@ -41,6 +41,7 @@ function App() {
               <li className='flex items-center gap-2 font-medium hover:bg-gray-200 hover:shadow rounded-md py-2 px-2 text-neutral-500 hover:text-indigo-400 cursor-pointer'>
                 <FiUser size={20}/> Profile
               </li>
+              
               <li className='flex items-center gap-2 font-medium hover:bg-gray-200 hover:shadow rounded-md py-2 px-2 text-neutral-500 hover:text-indigo-400 cursor-pointer'>
                 <FiSettings size={20}/> Settings
               </li>

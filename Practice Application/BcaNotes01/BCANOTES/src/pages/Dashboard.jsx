@@ -56,7 +56,6 @@ function Dashboard() {
                 
                 {/* welcome msg  */}
                 <div className='bg-indigo-500 shadow h-50 rounded-xl flex gap-1 mx-5'>
-                    
                     <SparklesPreview/>
                 </div>
 
@@ -118,11 +117,11 @@ function Dashboard() {
                         </div>
 
                         {/* exam countdown */}
-                        <div className="bg-white h-37.5 rounded-md p-5 flex flex-col justify-center">
+                        <div className="bg-white mt-5 h-37.5 rounded-md p-5 flex flex-col justify-center">
                         <h2 className="text-2xl font-medium mb-4 text-shadow-sm">Exam Countdown</h2>
 
                           {/* Give date as YYYY-M-D */}
-                            <ExamCountdown examDate="2026-2-10" />
+                            <ExamCountdown examDate="2026-3-15" />
 
                         </div>
 

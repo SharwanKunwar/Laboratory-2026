@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-function ExamCountdown({ examDate }) {
+function CountDown({ examDate }) {
   const parseDate = (dateString) => {
     // Split the string into year, month, day
     const [year, month, day] = dateString.split("-").map(Number);
@@ -37,22 +37,23 @@ function ExamCountdown({ examDate }) {
     return (
       <div className="text-center text-green-600 font-semibold">
         <pre>
-          🎉 Exam Time! Best of Luck
+          🎉 I Think you did it.
         </pre>
       </div>
     );
   }
 
   return (
-    <div className="flex justify-between text-center">
+    <div className="flex justify-between text-center gap-5">
       {Object.entries(timeLeft).map(([label, value]) => (
         <div key={label} className="flex flex-col">
-          <span className="text-3xl font-bold bg-gray-400 text-white p-2 rounded-sm shadow-sm text-shadow-sm mb-2">{value}</span>
-          <span className="text-xs uppercase text-gray-400 text-shadow-sm">{label}</span>
+          <span className="text-5xl  font-bold bg-white/30 backdrop-blur-sm text-white w-[80px] h-[80px] rounded-sm shadow-sm text-shadow-sm mb-2 flex justify-center items-center">{value}</span>
+          <span className="text-xs uppercase text-gray-200 text-shadow-sm">{label}</span>
         </div>
       ))}
+      
     </div>
   );
 }
 
-export default ExamCountdown;
+export default CountDown;
