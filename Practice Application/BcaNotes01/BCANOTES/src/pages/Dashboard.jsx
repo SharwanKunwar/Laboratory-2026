@@ -126,7 +126,7 @@ function Dashboard() {
                         </div>
 
                         {/* quote of the life  */}
-                        <h1 className='text-neutral-500 font-mono'>The magic you are looking for is in the work you are avoiding.</h1>
+                        <h1 className='text-neutral-400 font-mono'>The magic you are looking for is in the work you are avoiding.</h1>
 
                     </div>
                     
