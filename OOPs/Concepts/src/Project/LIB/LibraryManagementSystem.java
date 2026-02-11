@@ -80,6 +80,7 @@ public class LibraryManagementSystem {
                         System.out.println("There are no Books in the Library");
                         break;
                     }
+
                     System.out.println("-------------------- Removing Books -----");
                     System.out.print("Enter The book ID: ");
                     int Id = input.nextInt();
@@ -105,8 +106,18 @@ public class LibraryManagementSystem {
                     break;
                 case 4:
                     newLine(40);
-                    System.out.println("case 4");
+                    if(l1.bookList.isEmpty()){
+                        System.out.println("There are no Books in the Library");
+                        break;
+                    }
+                    System.out.println("------------------------- Returning Book -----");
+                    System.out.print("Enter The book ID: ");
+                    int returnBookId = input.nextInt();
+
+                    input.nextLine();
+                    l1.returnBook(returnBookId);
                     break;
+
                 case 5:
                     newLine(40);
                     System.out.println("-------------------- Displaying Books -----");

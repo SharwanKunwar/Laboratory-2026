@@ -1,9 +1,6 @@
 package Project.LIB;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class Library {
 
@@ -18,9 +15,16 @@ public class Library {
         Iterator<Book> iterator = bookList.iterator();
         boolean found = false;
 
+
         while (iterator.hasNext()) {
             Book book = iterator.next();
 
+            if(book.status.equals("Not available")) {
+                if(book.getId() == id) {
+                    System.out.println("Book '"+book.getName()+"' is not available it is\nIssued to '"+book.getIssuedTo()+"'");
+                    return;
+                }
+            }
             if (book.getId() == id) {
                 System.out.println("Name: " + book.getName());
                 System.out.println("Author: " + book.getAuthor());
@@ -50,35 +54,70 @@ public class Library {
 
     //Issue book
     void issueBook(int id) {
-        String issueTo = "";
         boolean found = false;
         Scanner input = new Scanner(System.in);
         for(Book book : bookList) {
+            if(book.status.equals("Available")) {
+                if (book.getId() == id) {
+                    book.status = "Not available";
+                    System.out.print("Issue to whom : ");
+                    String issueTo = input.nextLine();
+                    book.setIssuedTo(issueTo);
+                    found = true;
+                    break;
+                }
 
+            }else {
+                if(book.getId() == id) {
+                    System.out.println("Book is already issued to "+book.getIssuedTo());
+                    return;
+                }
+
+            }
+
+        }
+        // check found or not
+        if (found) {
+            for(Book book : bookList) {
+                if(book.getId() == id) {
+                    System.out.println("\nBook "+book.getName()+"\nIssued to "+book.getIssuedTo());
+                    return;
+                }
+
+            }
+        }else{
+
+            System.out.println("Book ID: " + id+ " is not found");
+        }
+    }
+
+    //return book
+    void returnBook(int id) {
+        boolean found = false;
+        for(Book book : bookList) {
             if (book.getId() == id) {
-                book.status = "Not available";
-                System.out.print("Issue to whom : ");
-                issueTo = input.nextLine();
-                input.close();
-                book.setIssuedTo(issueTo);
+                book.status = "Available";
                 found = true;
             }
         }
         // check found or not
         if (found) {
             for(Book book : bookList) {
-                System.out.println("\nBook "+book.getName()+"\nIssued to "+issueTo);
-                break;
+                if(book.getId() == id) {
+                    System.out.println("\nBook "+book.getName()+"\nReturned by "+book.getIssuedTo());
+                    if(Objects.equals(book.status, "Available")){
+                        book.setIssuedTo("none");
+                    }
+                    return;
+                }
+
             }
         }else{
             System.out.println("Book ID: " + id+ " is not found");
         }
     }
 
-    //return book
-    void returnBook(Book book) {
-        System.out.println("returning book");
-    }
+
     void displayBooks() {
         int count = 0;
         for(Book book : bookList){
@@ -92,6 +131,9 @@ public class Library {
             System.out.println("IssuedTo: "+book.getIssuedTo());
             System.out.println("Pages: "+book.getPages());
             System.out.println("Price: "+book.getPrice());
+            if(Objects.equals(book.status, "Available")){
+                book.setIssuedTo("none");
+            }
         }
     }
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 import { FiHome, FiBook, FiFileText, FiUser, FiSettings,FiAward,FiGrid,FiBookOpen , FiMail   } from 'react-icons/fi'
 import ProfileCard from './components/ProfileCard'
-import Dashboard from './pages/Dashboard'
+import { Link, Outlet } from 'react-router-dom'
 
 function App() {
   return (
@@ -26,12 +26,16 @@ function App() {
           <div className='mt-5 w-full'>
             <ul className='flex flex-col gap-1'>
 
-              <li className='flex items-center gap-2 font-medium hover:bg-gray-200 hover:shadow rounded-md py-2 px-2 text-neutral-500 hover:text-indigo-400 cursor-pointer'>
+              <Link to="dashboard">
+                <li className='flex items-center gap-2 font-medium hover:bg-gray-200 hover:shadow rounded-md py-2 px-2 text-neutral-500 hover:text-indigo-400 cursor-pointer'>
                 <FiGrid  size={20}/> Dashboard
               </li>
+              </Link>
+              <Link to="bcaProgram">
               <li className='flex items-center gap-2 font-medium hover:bg-gray-200 hover:shadow rounded-md py-2 px-2 text-neutral-500 hover:text-indigo-400 cursor-pointer'>
                 <FiBookOpen   size={20}/> BCA Program
               </li>
+              </Link>
               <li className='flex items-center gap-2 font-medium hover:bg-gray-200 hover:shadow rounded-md py-2 px-2 text-neutral-500 hover:text-indigo-400 cursor-pointer'>
                 <FiBook size={20}/> Library
               </li>
@@ -60,7 +64,7 @@ function App() {
 
         {/* Right box */}
         <div className='bg-gray-50 w-[80%] h-full '>
-          <Dashboard/>
+          <Outlet/>
         </div>
 
       </div>
