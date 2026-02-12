@@ -63,48 +63,39 @@ const FocusDash = () => {
         </div>
       </div>
 
-      <div className="flex justify-end items-center mt-5">
-        {/* Weather */}
-        <div className="px-6 py-2 rounded-2xl bg-[#e6ebf2] shadow-[10px_10px_20px_#cfd6df,-10px_-10px_20px_#ffffff] flex items-center gap-6">
-          <Cloud className="text-blue-400" />
-          <div>
-            <p className="text-xs tracking-widest text-blue-400">KATHMANDU</p>
-            <p className="text-xl font-light">15°C • Mist</p>
-            <p className="text-xs text-gray-500">Humidity 67%</p>
-          </div>
-        </div>
-      </div>
 
       {/* ---------- MAIN CONTENT ---------- */}
-      <div className="flex flex-1 items-top justify-evenly flex-wrap gap-10 mt-10 ">
+      <div className="flex flex-1 items-center justify-center flex-wrap">
 
+        {/* // not used yet  */}
         {/* Clock */}
-        <div className="flex justify-center w-full lg:w-auto">
-          <div className="w-80 h-80 rounded-full bg-[#e6ebf2] shadow-[20px_20px_40px_#cfd6df,-20px_-20px_40px_#ffffff] flex items-center justify-center">
-            <div className="w-64 h-64 rounded-full bg-[#e6ebf2] shadow-inner relative">
+        {/* <div className="flex justify-center lg:w-auto"> */}
+          {/* <div className="w-80 h-80 rounded-full bg-[#e6ebf2] shadow-[20px_20px_40px_#cfd6df,-20px_-20px_40px_#ffffff] flex items-center justify-center"> */}
+            {/* <div className="w-64 h-64 rounded-full bg-[#e6ebf2] shadow-inner relative"> */}
 
               {/* Hour */}
-              <div
-                className="absolute w-1 h-16 bg-blue-700 top-1/2 left-1/2 origin-bottom rounded-full"
-                style={{ transform: `translate(-50%, -100%) rotate(${hourDeg}deg)` }}
-              />
+              {/* <div */}
+                {/* className="absolute w-1 h-16 bg-blue-700 top-1/2 left-1/2 origin-bottom rounded-full" */}
+                {/* style={{ transform: `translate(-50%, -100%) rotate(${hourDeg}deg)` }} */}
+              {/* /> */}
 
               {/* Minute */}
-              <div
-                className="absolute w-1 h-24 bg-blue-500 top-1/2 left-1/2 origin-bottom rounded-full"
-                style={{ transform: `translate(-50%, -100%) rotate(${minuteDeg}deg)` }}
-              />
+              {/* <div */}
+                {/* className="absolute w-1 h-24 bg-blue-500 top-1/2 left-1/2 origin-bottom rounded-full" */}
+                {/* style={{ transform: `translate(-50%, -100%) rotate(${minuteDeg}deg)` }} */}
+              {/* /> */}
 
               {/* Second */}
-              <div
-                className="absolute w-0.5 h-28 bg-red-400 top-1/2 left-1/2 origin-bottom rounded-full"
-                style={{ transform: `translate(-50%, -100%) rotate(${secondDeg}deg)` }}
-              />
+              {/* <div */}
+                {/* className="absolute w-0.5 h-28 bg-red-400 top-1/2 left-1/2 origin-bottom rounded-full" */}
+                {/* style={{ transform: `translate(-50%, -100%) rotate(${secondDeg}deg)` }} */}
+              {/* /> */}
 
-              <div className="absolute w-4 h-4 bg-blue-600 rounded-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
-            </div>
-          </div>
-        </div>
+              {/* <div className="absolute w-4 h-4 bg-blue-600 rounded-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div> */}
+            {/* </div> */}
+          {/* </div> */}
+          
+        {/* </div> */}
 
         {/* Right Content */}
         <div className="w-full lg:w-[45%]">
@@ -152,7 +143,10 @@ const FocusDash = () => {
               Search
             </button>
           </div>
+          
+          
         </div>
+        
       </div>
 
       {/* ---------- FOOTER ---------- */}
@@ -168,7 +162,16 @@ const FocusDash = () => {
           <Mail className="cursor-pointer" />
           <Send className="cursor-pointer" />
           <Phone className="cursor-pointer" />
+          <Play className="cursor-pointer" />
+          <Mail className="cursor-pointer" />
+          <Send className="cursor-pointer" />
+          <Phone className="cursor-pointer" />
           <X className="cursor-pointer" />
+
+        </div>
+
+        <div className="px-3 border border-black/10 py-3 rounded-full bg-[#e6ebf2] shadow-[8px_8px_15px_#cfd6df,-8px_-8px_16px_#ffffff] flex items-center gap-3 hover:scale-105 transition cursor-pointer">
+          <Sparkles size={18} className="text-blue-500" />
         </div>
       </div>
     </div>
