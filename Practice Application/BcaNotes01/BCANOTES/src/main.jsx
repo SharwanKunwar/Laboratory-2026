@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Dashboard from './pages/Dashboard.jsx'
 import BcaProgram from './pages/BcaProgram.jsx'
 import BcaDefaultPage from './pages/BcaDefaultPage.jsx'
+import FocusDash from './pages/FocusDash.jsx'
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,7 @@ const router = createBrowserRouter([
         path:"dashboard",
         element:<Dashboard/>
       },
+      
     ]
   },
   {
