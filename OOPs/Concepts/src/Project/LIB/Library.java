@@ -103,12 +103,21 @@ public class Library {
         // check found or not
         if (found) {
             for(Book book : bookList) {
-                if(book.getId() == id) {
+                if(book.getId() == id && book.status.equals("Available")){
                     System.out.println("\nBook "+book.getName()+"\nReturned by "+book.getIssuedTo());
                     if(Objects.equals(book.status, "Available")){
                         book.setIssuedTo("none");
                     }
                     return;
+                }else {
+                    if(book.getId() == id){
+                        if(book.status.equals("Not available")){
+                            System.out.println("\nBook "+book.getName()+"\nis not issued to anyone");
+                            return;
+                        }
+
+
+                    }
                 }
 
             }
