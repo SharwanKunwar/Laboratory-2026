@@ -1,5 +1,5 @@
 import React from 'react'
-import { FiHome, FiBook, FiFileText, FiUser, FiSettings,FiAward,FiGrid,FiBookOpen , FiMail   } from 'react-icons/fi'
+import {FiBook, FiFileText, FiUser, FiSettings, FiEdit3, FiGrid, FiBookOpen,   } from 'react-icons/fi'
 import ProfileCard from './components/ProfileCard'
 import { Link, Outlet } from 'react-router-dom'
 
@@ -36,12 +36,19 @@ function App() {
                 <FiBookOpen   size={20}/> BCA Program
               </li>
               </Link>
-              <li className='flex items-center gap-2 font-medium hover:bg-gray-200 hover:shadow rounded-md py-2 px-2 text-neutral-500 hover:text-indigo-400 cursor-pointer'>
+              <Link to="library">
+                <li className='flex items-center gap-2 font-medium hover:bg-gray-200 hover:shadow rounded-md py-2 px-2 text-neutral-500 hover:text-indigo-400 cursor-pointer'>
                 <FiBook size={20}/> Library
               </li>
+              </Link>
               <li className='flex items-center gap-2 font-medium hover:bg-gray-200 hover:shadow rounded-md py-2 px-2 text-neutral-500 hover:text-indigo-400 cursor-pointer'>
                 <FiFileText size={20}/> PYQs
               </li>
+              <Link to="planner">
+                <li className='flex items-center gap-2 font-medium hover:bg-gray-200 hover:shadow rounded-md py-2 px-2 text-neutral-500 hover:text-indigo-400 cursor-pointer'>
+                <FiEdit3  size={20}/> Planner
+              </li>
+              </Link>
               <li className='flex items-center gap-2 font-medium hover:bg-gray-200 hover:shadow rounded-md py-2 px-2 text-neutral-500 hover:text-indigo-400 cursor-pointer'>
                 <FiUser size={20}/> Profile
               </li>

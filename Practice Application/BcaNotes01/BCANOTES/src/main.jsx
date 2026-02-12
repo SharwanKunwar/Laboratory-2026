@@ -7,6 +7,8 @@ import Dashboard from './pages/Dashboard.jsx'
 import BcaProgram from './pages/BcaProgram.jsx'
 import BcaDefaultPage from './pages/BcaDefaultPage.jsx'
 import FocusDash from './pages/FocusDash.jsx'
+import Planner from './pages/Planner.jsx'
+import Library from './pages/Library.jsx'
 
 const router = createBrowserRouter([
   {
@@ -21,6 +23,11 @@ const router = createBrowserRouter([
         path:"dashboard",
         element:<Dashboard/>
       },
+      {
+        path:"library",
+        element:<Library/>
+      }
+      
       
     ]
   },
@@ -34,6 +41,10 @@ const router = createBrowserRouter([
       }
     ]
   },
+  {
+        path:"planner",
+        element:<Planner/>
+      },
   
   
 ])

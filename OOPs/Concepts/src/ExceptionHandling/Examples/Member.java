@@ -28,7 +28,7 @@ public class Member {
     public void setSentence(String sentence) throws BuzzWordException{
         String hold = sentence.toUpperCase();
         if(hold.contains("FUCKING")){
-            String newWord = hold.replaceAll("FUCKING","***");
+            String newWord = hold.replaceAll("FUCKING","*******");
             this.sentence = newWord;
             throw new BuzzWordException("This sentence contain Buzz/F words");
         }else {

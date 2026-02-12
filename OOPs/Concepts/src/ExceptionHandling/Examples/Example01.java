@@ -22,7 +22,7 @@ public class Example01 {
         System.out.println("------------------------------------- test 2 ok -------------------------------------");
 
         try{
-            person.setSentence("i love my fucking life");
+            person.setSentence("i love my fucking life and i fucking love coding.");
             System.out.println("inside try "+person.getSentence());
         }catch (BuzzWordException e){
             System.out.println(e.getMessage());
