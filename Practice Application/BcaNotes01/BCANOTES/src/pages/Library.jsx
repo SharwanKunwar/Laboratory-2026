@@ -87,7 +87,7 @@ function Library() {
                     <div className='bg-indigo-400 w-[100px] h-[40px] rounded-sm flex justify-center items-center text-white'>life</div>
                     <div className='bg-indigo-400 w-[100px] h-[40px] rounded-sm flex justify-center items-center text-white'>technology</div>
                     <div className='bg-indigo-400 w-[100px] h-[40px] rounded-sm flex justify-center items-center text-white'>psychology</div>
-                    
+                  
                 </div>
 
 

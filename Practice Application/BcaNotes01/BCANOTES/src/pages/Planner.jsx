@@ -3,9 +3,9 @@ import React from 'react'
 function Planner() {
   return (
     <>
-        <div className='w-screen h-screen p-5'>
+        <div className='w-full h-full p-5'>
             <iframe
-                src="https://focus-ten-omega.vercel.app/Focus/higher"
+                src="https://todo-organizer-33.preview.emergentagent.com/"
                 title="Todo App"
                 className="w-full h-full border-none rounded-md"                            
             />

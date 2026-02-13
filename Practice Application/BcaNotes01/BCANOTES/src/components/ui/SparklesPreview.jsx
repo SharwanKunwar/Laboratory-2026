@@ -74,7 +74,7 @@ export function SparklesPreview() {
 
                         <div className=" w-[90%] h-[65%] rounded-md  flex items-end flex-col pb-3 pr-3">
                         {/* <h1 className="ml-10 font-medium w-full mb-5 text-xl">Your Challange Days</h1> */}
-                          <CountDown examDate="2026-2-18" />
+                          <CountDown examDate="2026-2-15" />
                         </div>
 
                         

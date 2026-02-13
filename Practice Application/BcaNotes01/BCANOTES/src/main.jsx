@@ -26,7 +26,11 @@ const router = createBrowserRouter([
       {
         path:"library",
         element:<Library/>
-      }
+      },
+      {
+      path:"planner",
+      element:<Planner/>
+      },
       
       
     ]
@@ -41,10 +45,7 @@ const router = createBrowserRouter([
       }
     ]
   },
-  {
-        path:"planner",
-        element:<Planner/>
-      },
+  
   
   
 ])
