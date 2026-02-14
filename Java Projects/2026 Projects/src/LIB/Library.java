@@ -38,8 +38,8 @@ public class Library extends LibraryController{
             System.out.println("ID: "+book.id);
             System.out.println("Title: "+book.title);
             System.out.println("Author: "+book.author);
-            if(book.status) System.out.println("Available");
-            else System.out.println("Not Available");
+            if(book.status) System.out.println("Status: Available\n");
+            else System.out.println("Status: Not Available\n");
         }
     }
 }
