@@ -1,22 +1,25 @@
 package PracticeCode;
 
+// find largest and secondlargest element from the given array
+
 public class largestElement {
     static void main(String[] args) {
-        int[] num = {4,2,8,6};
 
-        int max = num[0];
-        int secondLargest = Integer.MIN_VALUE;
+        int[] array = {4,5,6,7,8,3,1};
 
-        for(int i=1; i<num.length; i++){
-            if(num[i] > max){
-                secondLargest = max;
-                max = num[i];
-            }else if(num[i] > secondLargest){
-                secondLargest = num[i];
+        int max = array[0];
+        int secondMax = Integer.MIN_VALUE;
+
+        for(int i=1; i<array.length; i++){
+            if(array[i] > max){
+                secondMax = max;
+                max = array[i];
+            }else if(array[i] > secondMax){
+                secondMax = array[i];
             }
         }
+        System.out.println(max);
+        System.out.println(secondMax);
 
-        System.out.println("The largest element is "+max);
-        System.out.println("The second largest element is "+secondLargest);
     }
 }
