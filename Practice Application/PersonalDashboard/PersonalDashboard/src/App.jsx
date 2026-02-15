@@ -20,8 +20,8 @@ function App() {
 
         {/* Sidebar */}
         <div
-          className={`bg-yellow-400 h-full transition-all duration-300 ${
-            isOpen ? 'w-60' : 'w-15'
+          className={`h-full transition-all duration-300 ${
+            isOpen ? 'w-60' : 'w-17'
           } flex flex-col justify-between`}
         >
           {/* Top section: Logo + Nav */}
@@ -29,8 +29,8 @@ function App() {
             {/* Logo + Site Name */}
             <div className='flex items-center gap-2 p-4 border-b border-white/50 justify-start'>
               {/* Logo */}
-              <div className='flex-shrink-0 w-8 h-8 rounded-full bg-white/70 flex items-center justify-center'>
-                <img src="/vite.svg" alt="logo" className='w-6 h-6' />
+              <div className='flex-shrink-0 w-10 h-10 rounded-full bg-white/70 flex items-center justify-center'>
+                <img src="/vite.svg" alt="logo" className='w-full h-full p-1' />
               </div>
 
               {/* Text */}
@@ -53,17 +53,17 @@ function App() {
                 >
                   {/* Icon */}
                   {isOpen ? 
-                    <div className='text-black bg-white py-2 px-2 rounded text-xl flex-shrink-0'>
+                    <div className='text-white bg-slate-400 py-2 px-2 rounded text-xl flex-shrink-0'>
                     {item.icon}
                   </div>
                   :
-                   <div className='text-black bg-white py-1 rounded  text-2xl py-2 px-1.5 flex-shrink-0'>
+                   <div className='text-white bg-slate-400 rounded  text-2xl py-2 px-2 flex-shrink-0'>
                     {item.icon}
                   </div>}
 
                   {/* Label */}
                   <span
-                    className={`text-black bg-white py-2 px-2 rounded w-full font-medium transition-all duration-300 overflow-hidden whitespace-nowrap ${
+                    className={`text-white bg-slate-400 py-2 px-2 rounded w-full font-medium transition-all duration-300 overflow-hidden whitespace-nowrap ${
                       isOpen ? 'opacity-100 w-auto ml-2' : 'opacity-0 w-0 ml-0'
                     }`}
                   >
@@ -86,8 +86,23 @@ function App() {
           </div>
         </div>
 
-        {/* Main content */}
-        <div className='flex-1 p-4'>Right Content</div>
+        {/* Main content ----------------------------------------------------------------------------------------------------------------*/}
+        <div className='flex-1 px-5 border-l border-white/30 py-5'>
+              <div className='bg-gray-50 w-full h-[25%] rounded-lg p-5'>
+                <div className='bg-red-400 w-full h-full rounded-md'>box</div>
+              </div>
+
+              <div className='bg-gray-50 w-full h-[20%] rounded-lg '>
+                box
+              </div>
+
+              <div className='bg-gray-50 w-full h-[50%] rounded-lg '>
+                box
+              </div>
+
+        </div>
+
+
       </div>
     </div>
   );
