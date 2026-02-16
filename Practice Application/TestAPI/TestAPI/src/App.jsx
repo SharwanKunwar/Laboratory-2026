@@ -1,10 +1,11 @@
 import React from 'react'
+import ApiTester from './pages/ApiTester'
 
 function App() {
   return (
     <>
       <div className='bg-red-400'>
-        box
+        <ApiTester/>
       </div>
     </>
   )
