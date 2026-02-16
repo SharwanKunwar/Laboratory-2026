@@ -1,13 +1,11 @@
-    import React from 'react'
-import FocusDash from './pages/FocusDash'
+import React from 'react'
+import FinanceDash from './pages/FinanceDash'
 
 function App() {
-  return (
-    <>  
-      <div className='w-screen h-screen'>
-        <FocusDash/>
-      </div>
-    </>
+  return (  
+    <div className='w-screen h-screen'>
+      <FinanceDash/>
+    </div>
   )
 }
 
