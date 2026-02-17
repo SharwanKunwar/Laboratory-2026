@@ -11,9 +11,14 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.18",
+    "antd": "^6.3.0",
+    "dayjs": "^1.11.19",
+    "lucide-react": "^0.564.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-icons": "^5.5.0",
+    "react-router-dom": "^7.13.0",
+    "swiper": "^12.1.1",
     "tailwindcss": "^4.1.18"
   },
   "devDependencies": {
