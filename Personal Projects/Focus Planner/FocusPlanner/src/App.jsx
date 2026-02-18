@@ -6,7 +6,6 @@ const navItems = [
   { icon: <FiGrid />, label: 'Dashboard', path:"dashboard"},
   { icon: <FiEdit />, label: 'Compose Task', path:"composeTask"},
   { icon: <FiArchive />, label: 'Assets', path:"assets"},
-  { icon: <FiCheckSquare />, label: 'View All Task', path:"viewAllTask"},
   { icon: <FiClock />, label: 'Lifetime', path:"lifeTime"},
   { icon: <FiList />, label: 'Bucket List', path:"bucketList"},
   { icon: <FiUser />, label: 'MySelf', path:"mySelf"},

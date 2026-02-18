@@ -5,9 +5,9 @@ import TaskPage from './TaskPage'
 function ComposeTask() {
   return (
     <>
-        <div className='w-full h-full bg-red-400'>
+        <div className='w-full h-full '>
             <Navbar/>
-            <div className='bg-green-400 h-full w-full pt-17 overflow-y-scroll overflow-x-hidden'>
+            <div className=' h-full w-full pt-17 overflow-y-scroll overflow-x-hidden hide-scrollbar relative'>
               <TaskPage/>
             </div>
         </div>
