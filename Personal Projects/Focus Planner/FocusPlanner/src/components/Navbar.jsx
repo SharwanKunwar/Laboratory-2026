@@ -22,7 +22,7 @@ function Navbar({ onPriorityChange, onDateChange }) {
   
 
   return (
-    <div className='absolute bg-white/60 h-18 border-b top-0 left-0 w-full border-white/50 backdrop-blur-2xl flex gap-1 z-50 rounded-tr-md'>
+    <div className=' bg-white/40 h-18 border-b w-full border-white/50 backdrop-blur-2xl flex gap-1 z-50 rounded-tr-md'>
       
       {/* Priority selector */}
       <div className='w-[30%] h-full px-5 flex justify-start items-center'>

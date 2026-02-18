@@ -3,6 +3,8 @@ import { BsFillTrash3Fill } from 'react-icons/bs';
 import { useState } from 'react';
 import useTaskStore from '../data/taskStore';
 import Ribbon from 'antd/es/badge/Ribbon';
+import Watch from './Watch';
+import TimeTracker from './TimeTracker';
 
 function TaskCard({ task }) {
 
@@ -33,7 +35,7 @@ function TaskCard({ task }) {
 
         <div className='flex gap-2 mt-4'>
           <Button className='w-full' onClick={handleStartWork}>
-            Start Work
+            Start Task With Study Mode
           </Button>
 
           <Button danger onClick={() => deleteTask(task.id)}>
@@ -44,18 +46,47 @@ function TaskCard({ task }) {
       </Card>
       </Badge.Ribbon>
 
+
+
+      {/* // start task with study mode model working here ------------------------------------------------------------------ */}
       <Modal
         open={isModalOpen}
         footer={null}
         onCancel={() => setIsModalOpen(false)}
         width="97vw"
         style={{ top: '13vh', left: '0vw' }}
-        bodyStyle={{ height: "78vh" }}
+        bodyStyle={{ height: "78vh", padding:"20px"}}
       >
-        <div className="h-full flex justify-center items-center">
-          <h2 className="text-2xl font-semibold">
-            Working on: {task.title}
-          </h2>
+        <div className="h-full flex gap-1 justify-center items-center ">
+          {/* left div  */}
+          <div className=' flex flex-col gap-1 w-[50%] h-full'>
+            
+            {/* watch and timer  */}
+            <div className=' w-full h-[50%] flex gap-1 '>
+              {/* watch  */}
+              <div className=' w-[37%] h-full flex justify-center items-center border border-slate-400'>
+                <Watch/>
+              </div>
+              {/* timer and buttons  */}
+              <div className=' w-[63%] h-full'>
+                <TimeTracker/>
+              </div>
+
+            </div>
+
+            {/* note  */}
+            <div className='w-full h-[50%] pr-3'>
+              <h1 className='text-lg font-medium ml-3 mt-10 text-shadow-2xs'>Notes:</h1>
+              <div className='bg-gray-50 h-[25vh] rounded-tr-md rounded-bl-md rounded-br-md mt-1 border border-black/30 shadow-sm p-5'>
+                <p className='text-neutral-400'>You can start from here . . . </p>
+              </div>
+            </div>
+
+          </div>
+
+          {/* right div  */}
+          <div className='bg-yellow-400 w-[50%] h-full'>right</div>
+
         </div>
       </Modal>
     </>

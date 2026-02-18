@@ -10,3 +10,17 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+
+
+
+/* target the inner modal content using your custom class */
+.glass-modal .ant-modal-content {
+  background: rgba(255, 255, 255, 0.1);        /* semi-transparent */
+  backdrop-filter: blur(12px);                 /* glass blur */
+  -webkit-backdrop-filter: blur(12px);         /* Safari support */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* subtle border */
+  border-radius: 16px;                          /* rounded corners */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);   /* optional shadow */
+  color: white;                                 /* text color */
+}

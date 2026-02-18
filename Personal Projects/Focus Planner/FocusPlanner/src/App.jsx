@@ -27,15 +27,18 @@ function App() {
           `}
         >
 
-          {/* Top: Logo */}
+          <Link to="/">
+            {/* Top: Logo */}
           <div className={`flex items-center gap-2 px-3.5 p-3 transition-all duration-300 border-b border-white/50`}>
-            <img
+            
+              <img
               src="vite.svg"
               alt="logo"
               className={`bg-indigo-700 p-2 rounded shadow transition-all duration-300
                 ${isOpen ? 'w-12 h-12' : 'w-12 h-12'}
               `}
             />
+            
             <div
               className={`overflow-hidden transition-[max-width,opacity] duration-300 ease-in-out
                 ${isOpen ? 'max-w-75 opacity-100' : 'max-w-0 opacity-0'}
@@ -44,6 +47,7 @@ function App() {
               <h1 className='font-bold text-shadow-sm text-white text-xl ml-2'>Planner</h1>
             </div>
           </div>
+          </Link>
 
           {/* Navigation Items */}
           <div className='flex flex-col gap-3 px-2.5 '>
