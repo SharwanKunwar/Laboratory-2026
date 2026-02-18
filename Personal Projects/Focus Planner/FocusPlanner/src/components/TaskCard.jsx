@@ -5,6 +5,7 @@ import useTaskStore from '../data/taskStore';
 import Ribbon from 'antd/es/badge/Ribbon';
 import Watch from './Watch';
 import TimeTracker from './TimeTracker';
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
 function TaskCard({ task }) {
 
@@ -85,7 +86,16 @@ function TaskCard({ task }) {
           </div>
 
           {/* right div  */}
-          <div className='bg-yellow-400 w-[50%] h-full'>right</div>
+          <div className='w-[50%] h-full'>
+            {/* // start work from here  ----------------------------------------------------------------------------------------------------------------------------------------------------*/}
+            <DotLottieReact
+              src="https://lottie.host/a3f8bee6-2fad-40f7-8017-749f079adf1d/YirePxkaGW.lottie"
+              loop
+              autoplay
+            />
+
+          </div>
+
 
         </div>
       </Modal>

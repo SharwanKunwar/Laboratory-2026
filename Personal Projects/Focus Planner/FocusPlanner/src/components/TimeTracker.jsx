@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Card, Button, Modal } from "antd";
+import AiModal from "../components/AiModal";
 
 function TimeTracker() {
   const [time, setTime] = useState(0); // timer in milliseconds
   const [isRunning, setIsRunning] = useState(false);
+
 
   // Modal states
   const [isMusicOpen, setIsMusicOpen] = useState(false);
@@ -98,7 +100,9 @@ function TimeTracker() {
       </Modal>
 
 
-      {/* AI Modal */}
+        
+      <AiModal isAiOpen={isAiOpen} setIsAiOpen={setIsAiOpen} />
+      {/* AI Modal
       <Modal
         open={isAiOpen}
         footer={null}
@@ -107,12 +111,7 @@ function TimeTracker() {
         style={{ top: '5vh', left: '0vw' }}
         bodyStyle={{height: "78vh", padding:"20px", }}
         centered
-      >
-        <div className="h-full flex gap-1 justify-center items-center ">
-            AI stuff
-        </div>
-        
-      </Modal>
+      > </Modal> */}
 
     </div>
   );
