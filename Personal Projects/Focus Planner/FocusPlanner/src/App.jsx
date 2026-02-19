@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { FiHome, FiEdit, FiArchive, FiCheckSquare, FiClock, FiList, FiUser, FiChevronLeft, FiChevronRight, FiGrid } from 'react-icons/fi';
+import { FiHome, FiEdit, FiArchive, FiCheckSquare, FiClock, FiList, FiUser, FiChevronLeft, FiChevronRight, FiGrid, FiActivity, FiTarget } from 'react-icons/fi';
 import { Link, Outlet } from 'react-router-dom';
 
 const navItems = [
   { icon: <FiGrid />, label: 'Dashboard', path:"dashboard"},
   { icon: <FiEdit />, label: 'Compose Task', path:"composeTask"},
+  { icon: <FiTarget />, label: 'challange', path:"challange"},
   { icon: <FiArchive />, label: 'Assets', path:"assets"},
   { icon: <FiClock />, label: 'Lifetime', path:"lifeTime"},
   { icon: <FiList />, label: 'Bucket List', path:"bucketList"},
