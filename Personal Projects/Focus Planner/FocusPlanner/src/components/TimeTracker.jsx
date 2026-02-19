@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Card, Button, Modal } from "antd";
-import AiModal from "../components/AiModal";
 
 function TimeTracker() {
   const [time, setTime] = useState(0); // timer in milliseconds
@@ -34,7 +33,7 @@ function TimeTracker() {
     <div className="mt-0 px-3 flex flex-col gap-3 items-center">
       
       {/* Timer Display */}
-      <div className="flex justify-center items-center mastShadow !bg-gradient-to-br from-indigo-400 to-pink-400 w-full h-[150px] border-black/30 border rounded-lg">
+      <div className="flex justify-center items-center mastShadow !bg-gradient-to-br from-indigo-400 to-pink-400 w-full h-[29vh] border-black/30 border rounded-lg">
         <div className="text-6xl text-white flex justify-center items-center">
           {formatTime(time)}
         </div>
@@ -63,7 +62,7 @@ function TimeTracker() {
       </section>
 
       {/* section 02 ------------------- */}
-      <section className="bg-white rounded-lg w-full flex justify-between items-center gap-5">
+      <section className=" w-full rounded-lg w-full flex justify-between items-center gap-5">
         {/* Play Music Button */}
         <Button 
           size="large" 
@@ -79,7 +78,7 @@ function TimeTracker() {
           className="w-full mastShadow !bg-gradient-to-br from-indigo-400 to-pink-400 via-orange-400 !text-white !font-medium !text-[16px]"
           onClick={() => setIsAiOpen(true)}
         >
-          Open AI
+          Open Draw
         </Button>
       </section>
 
@@ -93,16 +92,12 @@ function TimeTracker() {
         bodyStyle={{ height: "78vh", padding:"20px"}}
         centered
       >
-        <div className="h-full flex gap-1 justify-center items-center ">
-            Music stuff
-        </div>
-        
+        <h1>music</h1>
       </Modal>
 
 
-        
-      <AiModal isAiOpen={isAiOpen} setIsAiOpen={setIsAiOpen} />
-      {/* AI Modal
+      
+      {/* AI Modal --------------------------------------------*/}
       <Modal
         open={isAiOpen}
         footer={null}
@@ -111,7 +106,9 @@ function TimeTracker() {
         style={{ top: '5vh', left: '0vw' }}
         bodyStyle={{height: "78vh", padding:"20px", }}
         centered
-      > </Modal> */}
+      > 
+      <iframe src="https://excalidraw.com/" className="w-full h-full"></iframe>
+      </Modal>
 
     </div>
   );
