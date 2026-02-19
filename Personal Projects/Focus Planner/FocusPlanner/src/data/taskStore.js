@@ -17,7 +17,10 @@ const useTaskStore = create(
             status: "pending",
             createdAt: now.toISOString(),
             createdYear: now.getFullYear(),
-            priority, // now stored correctly
+            priority,
+            completedAt: null,
+            duration: 0, // milliseconds
+            notes: "",   // 👈 NEW FIELD for notes
           };
 
           return {
@@ -34,14 +37,47 @@ const useTaskStore = create(
 
       updateStatus: (id, newStatus) =>
         set((state) => ({
+          tasks: state.tasks.map((task) => {
+            if (task.id === id) {
+              return {
+                ...task,
+                status: newStatus,
+                completedAt:
+                  newStatus === "completed"
+                    ? new Date().toISOString()
+                    : task.completedAt,
+              };
+            }
+            return task;
+          }),
+        })),
+
+      updateDuration: (id, duration) =>
+        set((state) => ({
           tasks: state.tasks.map((task) =>
-            task.id === id ? { ...task, status: newStatus } : task
+            task.id === id ? { ...task, duration } : task
+          ),
+        })),
+
+        updateNotes: (id, notes) =>
+        set((state) => ({
+          tasks: state.tasks.map((task) =>
+            task.id === id ? { ...task, notes } : task
+          ),
+        })),
+
+
+      // 👈 NEW FUNCTION TO UPDATE NOTES
+      updateNotes: (id, notes) =>
+        set((state) => ({
+          tasks: state.tasks.map((task) =>
+            task.id === id ? { ...task, notes } : task
           ),
         })),
     }),
     {
-      name: "task-storage", // key in localStorage
-      getStorage: () => localStorage, // use localStorage for persistence
+      name: "task-storage",
+      getStorage: () => localStorage,
     }
   )
 );
