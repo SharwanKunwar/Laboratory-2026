@@ -170,12 +170,39 @@ function TaskCard({ task }) {
         footer={null}
         onCancel={() => setIsNoteModalOpen(false)}
         title={`Task Notes of ${task.title}`}
+        width="99vw"
+        style={{ top: '13vh', left: '0vw' }}
+        bodyStyle={{ padding:"10px"}}
       >
-        <div className="p-5">
-          <p style={{ whiteSpace: 'pre-wrap' }}>
-            {task.notes || "No notes available for this task."}
-          </p>
+        <div className="overflow-y-scroll h-[500px] hide-scrollbar flex gap-5">
+          {/* task / question  */}
+          <div className=' w-[50%] '>
+            <div className='bg-gray-50 rounded-md shadow-sm p-5'>
+              <h1 className='text-lg font-medium'> {task.title} </h1>
+          <small className='text-neutral-400'> CreatedAt: {formattedDate} </small>
+          <p className='text-gray-500 mt-2 text-shadow-sm min-h-[90px] '> {truncatedDescription} </p>
+
+          <section className='flex justify-start items-center gap-3 '>
+            <Tag color={task.status === "in-progress" ? "blue" : "orange"} className='mt-1!'> {task.status}</Tag>
+            {task.status == "completed" && (
+              <Tag color={task.status === "in-progress" ? "blue" : "orange"} className='mt-1!'> <p>Time Spent: {convertMillisecondsToHMS(task.duration)}</p> </Tag>
+            )}
+          </section>             
+            </div>
+          </div>
+          {/* question task  */}
+          <div className=' w-[50%] px-5  rounded bg-indigo-400'>
+            <h1 className=' py-3 text-xl mb-3 border-b border-black/30 text-white'>Notes : </h1>
+              <div className=' p-5 rounded-md shadow-sm  text-shadow-sm h-[400px] overflow-y-scroll hide-scrollbar bg-yellow-400 text-white' >
+                <p style={{ whiteSpace: 'pre-wrap' }}>
+                  {task.notes || "No notes available for this task."}
+                </p>
+              </div>
+          </div>
+
         </div>
+
+        
       </Modal>
 
 
