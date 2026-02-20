@@ -191,9 +191,9 @@ function TaskCard({ task }) {
             </div>
           </div>
           {/* question task  */}
-          <div className=' w-[50%] px-5  rounded bg-indigo-400'>
+          <div className=' w-[50%] px-5  rounded bg-yellow-400'>
             <h1 className=' py-3 text-xl mb-3 border-b border-black/30 text-white'>Notes : </h1>
-              <div className=' p-5 rounded-md shadow-sm  text-shadow-sm h-[400px] overflow-y-scroll hide-scrollbar bg-yellow-400 text-white' >
+              <div className=' p-5 rounded-md shadow-sm  text-shadow-sm h-[400px] overflow-y-scroll hide-scrollbar bg-black text-white' >
                 <p style={{ whiteSpace: 'pre-wrap' }}>
                   {task.notes || "No notes available for this task."}
                 </p>
