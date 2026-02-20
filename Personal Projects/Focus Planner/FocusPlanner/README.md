@@ -1,16 +1,117 @@
-# React + Vite
+# 📘 Focus Planner  
+### Smart Productivity & Task Management System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+## 📌 Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Focus Planner** is a modern task management web application designed to help users organize, prioritize, and manage daily tasks efficiently.
 
-## React Compiler
+It provides a clean and structured interface that improves productivity through priority tagging, due date tracking, and organized task visualization.
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+---
 
-## Expanding the ESLint configuration
+## 🎯 Problem It Solves
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Many users struggle with:
+- Disorganized task lists  
+- Missing deadlines  
+- Lack of priority management  
+- Poor productivity tracking  
+
+Focus Planner provides a structured and visually organized solution to manage tasks effectively.
+
+---
+
+## 🚀 Features
+
+- ✅ Add New Tasks  
+- ✅ Delete Tasks  
+- ✅ Set Task Priority (High / Medium / Low)  
+- ✅ Priority Ribbon Indicator  
+- ✅ Due Date Selection  
+- ✅ Filter Tasks by Date  
+- ✅ Task Notes Modal  
+- ✅ Responsive Dashboard Layout  
+- ✅ Lottie-based Error Page  
+- ✅ Global State Management using Zustand  
+
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
+- React.js  
+- Tailwind CSS  
+- Ant Design  
+- Zustand (State Management)  
+- React Icons  
+- Lottie Animations  
+
+### Deployment
+- Vercel  
+
+---
+
+## 🏗️ System Architecture
+
+    User Interface (React + Tailwind + Ant Design)
+                ↓
+    State Management (Zustand)
+                ↓
+    Local In-Memory Data Storage
+
+
+(Current version is frontend-based architecture.)
+
+---
+
+## 📂 Project Structure
+    src/
+    ├── components/
+    │ ├── TaskCard.jsx
+    │ ├── Navbar.jsx
+    │
+    ├── pages/
+    │ ├── TaskPage.jsx
+    │ ├── ErrorPage.jsx
+    │
+    ├── data/
+    │ ├── taskStore.js
+    │
+    ├── App.jsx
+    └── main.jsx
+
+
+---
+
+## 🎨 UI Components Used
+* Ant Design Modal (Task Notes)
+* Ant Design Badge.Ribbon (Priority Indicator)
+* Ant Design DatePicker
+* Ant Design Select
+* Responsive Grid Layout
+
+
+## 🔥 Challenges Faced
+* Managing global state efficiently using Zustand
+* Updating modal content dynamically
+* Fixing Vercel refresh 404 issue
+* Handling priority ribbon color logic
+* Maintaining UI consistency
+
+## 📈 Future Improvements
+* 🔐 Add User Authentication (JWT)
+* 💾 Backend Integration (Spring Boot)
+* 🗄️ PostgreSQL Database Integration
+* 🔄 Real-Time Updates
+* 📊 Task Analytics Dashboard
+* 🌙 Dark Mode
+* 📱 Progressive Web App (PWA) Support
+* Mobile responsive design
+
+
+### ⭐ Project Status
+
+    🟢 Actively Improving
+        This project is continuously being enhanced with new features and optimizations.
