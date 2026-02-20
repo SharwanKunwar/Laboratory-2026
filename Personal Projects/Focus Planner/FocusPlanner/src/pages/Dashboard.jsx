@@ -13,7 +13,7 @@ const FavoriteItem = React.memo(({ site, removeFavorite }) => (
     <img
       src={`https://www.google.com/s2/favicons?domain=${site.url}`}
       alt={site.name}
-      className="bg-indigo-400 p-2 rounded-sm w-8 h-8"
+      className="bg-indigo-400 p-1 rounded-sm w-10 h-10"
       loading="lazy"
     />
 
