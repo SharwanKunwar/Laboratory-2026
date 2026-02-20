@@ -57,11 +57,13 @@ function Dashboard() {
       </div>
 
       <div className="h-full flex flex-col gap-5">
-        {/* Top cards */}
+        {/* Top cards --------------- work here today */}
         <div className="w-full h-[80%] grid grid-cols-3 gap-5">
-          <Card className="bg-gray-50 h-full rounded shadow-sm" />
-          <Card className="bg-gray-50 h-full rounded shadow-sm" />
-          <Card className="bg-gray-50 h-full rounded shadow-sm" />
+          <Card className="bg-gray-50 h-full rounded shadow-sm">
+            <h1 className="text-lg">Task Details</h1>
+          </Card>
+          <Card className="bg-gray-50 h-full rounded shadow-sm">graph</Card>
+          <Card className="bg-gray-50 h-full rounded shadow-sm">etc</Card>
         </div>
 
         {/* Bottom div */}
