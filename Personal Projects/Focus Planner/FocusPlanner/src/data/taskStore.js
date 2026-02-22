@@ -59,12 +59,6 @@ const useTaskStore = create(
           ),
         })),
 
-        updateNotes: (id, notes) =>
-        set((state) => ({
-          tasks: state.tasks.map((task) =>
-            task.id === id ? { ...task, notes } : task
-          ),
-        })),
 
 
       // 👈 NEW FUNCTION TO UPDATE NOTES

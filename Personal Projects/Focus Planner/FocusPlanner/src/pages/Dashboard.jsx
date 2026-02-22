@@ -1,160 +1,88 @@
-import React, { useState } from "react";
+import React from "react";
 import { SparklesPreview } from "../components/ui/SparklesPreview";
-import { Card, Button, Modal } from "antd";
-import { motion } from "framer-motion";
-import { useFavStore } from "../data/useFavStore";
-import { FaSitemap } from "react-icons/fa";
-import { Input, Form } from "antd";
-
-// 🔹 Memoized Favorite Item
-const FavoriteItem = React.memo(({ site, removeFavorite }) => (
-  <div className="bg-gray-50 shadow-sm  w-full py-2 h-[60px] rounded-md flex justify-between items-center px-2 gap-3 ">
-    {/* Favicon */}
-    <img
-      src={`https://www.google.com/s2/favicons?domain=${site.url}`}
-      alt={site.name}
-      className="bg-indigo-400 p-1 rounded-sm w-10 h-10"
-      loading="lazy"
-    />
-
-    {/* Site info */}
-    <section className="flex-1">
-      <h1 className="text-sm font-semibold truncate">{site.name}</h1>
-      <p className="text-[10px] text-gray-700">added at: {site.addedAt}</p>
-    </section>
-
-    {/* Buttons */}
-    <section className="flex gap-3">
-      <Button
-        size="small"
-        type="primary"
-        onClick={() => window.open(`https://${site.url}`, "_blank")}
-      >
-        Open
-      </Button>
-      <Button size="small" type="primary" danger onClick={() => removeFavorite(site.id)}>
-        Remove
-      </Button>
-    </section>
-  </div>
-));
+import { Card } from "antd";
+import useTaskStore from "../data/taskStore";
+import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Tooltip, Legend } from "recharts";
 
 function Dashboard() {
-  const [isFavModalOpen, setIsFavModalOpen] = useState(false);
-  const [siteName, setSiteName] = useState("");
-  const [siteUrl, setSiteUrl] = useState("");
-  const { favorites, addFavorite, removeFavorite } = useFavStore();
+  const tasks = useTaskStore((state) => state.tasks);
 
+  const taskStats = React.useMemo(() => {
+    const now = new Date();
 
+    let completed = 0;
+    let pending = 0;
+    let inProgress = 0;
+    let overdue = 0;
 
-  
+    tasks.forEach((task) => {
+      const createdDate = new Date(task.createdAt);
+      const diffDays = (now - createdDate) / (1000 * 60 * 60 * 24);
+
+      if (task.status === "completed") completed++;
+      if (task.status === "pending") pending++;
+      if (task.status === "inprogress") inProgress++;
+      if (diffDays > 2 && task.status !== "completed") overdue++;
+    });
+
+    return { completed, pending, inProgress, overdue };
+  }, [tasks]);
+
+  const { completed, pending, inProgress, overdue } = taskStats;
+
+  const data = [
+    { name: "Completed", count: completed },
+    { name: "Pending", count: pending },
+    { name: "In Progress", count: inProgress },
+    { name: "Overdue", count: overdue },
+  ];
 
   return (
     <div className="w-full h-full p-5 flex flex-col gap-5">
-      {/* Welcome message */}
       <div className="h-[250px]">
         <SparklesPreview />
       </div>
 
       <div className="h-full flex flex-col gap-5">
-        {/* Top cards --------------- work here today */}
-        <div className="w-full h-[80%] grid grid-cols-3 gap-5">
-          <Card className="bg-gray-50 h-full rounded shadow-sm">
-            <h1 className="text-lg">Task Details</h1>
+        <div className="w-full h-[100%] grid grid-cols-3 gap-5">
+          {/* LEFT CARD */}
+          <Card className="bg-gray-50 col-span-1 rounded shadow-sm p-5">
+            <h1 className="text-lg font-semibold mb-4">Task Details</h1>
+            <div className="grid grid-cols-2 gap-4">
+              <div className="bg-green-50 p-4 rounded-md shadow-sm">
+                <p className="text-sm text-green-600">Completed</p>
+                <h2 className="text-2xl font-bold text-green-700">{completed}</h2>
+              </div>
+              <div className="bg-yellow-50 p-4 rounded-md shadow-sm">
+                <p className="text-sm text-yellow-600">Pending</p>
+                <h2 className="text-2xl font-bold text-yellow-700">{pending}</h2>
+              </div>
+              <div className="bg-blue-50 p-4 rounded-md shadow-sm">
+                <p className="text-sm text-blue-600">In Progress</p>
+                <h2 className="text-2xl font-bold text-blue-700">{inProgress}</h2>
+              </div>
+              <div className="bg-red-50 p-4 rounded-md shadow-sm">
+                <p className="text-sm text-red-600">Overdue (&gt; 2 days)</p>
+                <h2 className="text-2xl font-bold text-red-700">{overdue}</h2>
+              </div>
+            </div>
           </Card>
-          <Card className="bg-gray-50 h-full rounded shadow-sm">graph</Card>
-          <Card className="bg-gray-50 h-full rounded shadow-sm">etc</Card>
+
+          {/* RIGHT CARD - Task Graph */}
+          <Card className="bg-gray-50 col-span-2 rounded shadow-sm p-5">
+            <h1 className="text-lg font-semibold mb-4">Task Visualization</h1>
+            <ResponsiveContainer width="100%" height={300}>
+              <BarChart data={data} margin={{ top: 20, right: 30, left: 0, bottom: 5 }}>
+                <XAxis dataKey="name" />
+                <YAxis allowDecimals={false} />
+                <Tooltip />
+                <Legend />
+                <Bar dataKey="count" fill="#1890ff" />
+              </BarChart>
+            </ResponsiveContainer>
+          </Card>
         </div>
-
-        {/* Bottom div */}
-        <motion.div
-          layout
-          className="bg-gray-50 shadow-sm h-[20%] flex items-center gap-5 rounded px-5"
-        >
-          {/* Add Favorite Button */}
-          <Button size="large" type="primary" onClick={() => setIsFavModalOpen(true)}>
-            <FaSitemap />
-          </Button>
-        </motion.div>
       </div>
-
-      {/* Add Favorite Site Modal */}
-      
-
-<Modal
-  title="Add Favorite Site"
-  open={isFavModalOpen}
-  destroyOnClose={false} // keeps modal mounted for smooth open
-  onCancel={() => setIsFavModalOpen(false)}
-  onOk={() => {
-    // Validation
-    if (!siteName || !siteUrl) {
-      alert("Both fields are required!");
-      return;
-    }
-    if (!siteUrl.startsWith("https://")) {
-      alert("Site URL must start with https://");
-      return;
-    }
-
-    addFavorite({
-      id: Date.now(),
-      name: siteName,
-      url: siteUrl.replace(/^https?:\/\//, ""), // remove https:// for favicon
-      addedAt: new Date().toLocaleString(),
-    });
-
-    setSiteName("");
-    setSiteUrl("");
-  }}
-  okText="Add"
->
-  {/* 🔹 Display added favorite sites */}
-  <div className="max-h-[300px] min-h-[100px] overflow-y-scroll flex flex-col gap-3 mb-5 hide-scrollbar">
-    {favorites.length === 0 && (
-      <p className="text-gray-400 text-sm h-[100px] flex justify-center items-center">
-        No favorite sites added yet
-      </p>
-    )}
-
-    {favorites.map((site) => (
-      <FavoriteItem key={site.id} site={site} removeFavorite={removeFavorite} />
-    ))}
-  </div>
-
-  {/* 🔹 Inputs to add new site */}
-  <Form layout="vertical">
-    <Form.Item
-      label="Site Name"
-      required
-      rules={[{ required: true, message: "Please input the site name!" }]}
-    >
-      <Input
-        placeholder="Site Name"
-        value={siteName}
-        onChange={(e) => setSiteName(e.target.value)}
-      />
-    </Form.Item>
-
-    <Form.Item
-      label="Site URL"
-      required
-      rules={[
-        { required: true, message: "Please input the site URL!" },
-        {
-          pattern: /^https:\/\/.+/,
-          message: "URL must start with https://",
-        },
-      ]}
-    >
-      <Input
-        placeholder="Site URL (https://example.com)"
-        value={siteUrl}
-        onChange={(e) => setSiteUrl(e.target.value)}
-      />
-    </Form.Item>
-  </Form>
-</Modal>
     </div>
   );
 }

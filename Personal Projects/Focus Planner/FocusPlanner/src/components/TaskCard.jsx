@@ -27,7 +27,7 @@ function TaskCard({ task }) {
 
   const handleStartWork = () => {
     setIsModalOpen(true);
-    updateStatus(task.id, "in-progress");
+    updateStatus(task.id, "inprogress");
   };
 
   function convertMillisecondsToHMS(ms) {
@@ -53,14 +53,14 @@ function TaskCard({ task }) {
           <p className='text-gray-500 mt-2 text-shadow-sm min-h-[90px]'> {truncatedDescription} </p>
 
           <section className='flex justify-start items-center gap-3'>
-            <Tag color={task.status === "in-progress" ? "blue" : "orange"} className='mt-1!'> {task.status}</Tag>
+            <Tag color={task.status === "inprogress" ? "blue" : "orange"} className='mt-1!'> {task.status}</Tag>
             {task.status == "completed" && (
-              <Tag color={task.status === "in-progress" ? "blue" : "orange"} className='mt-1!'> <p>Time Spent: {convertMillisecondsToHMS(task.duration)}</p> </Tag>
+              <Tag color={task.status === "inprogress" ? "blue" : "orange"} className='mt-1!'> <p>Time Spent: {convertMillisecondsToHMS(task.duration)}</p> </Tag>
             )}
           </section>
 
           <div className='flex gap-2 mt-4'>
-            {task.status === "pending" || task.status === "in-progress" ? 
+            {task.status === "pending" || task.status === "inprogress" ? 
               <Button className='w-full' onClick={handleStartWork}>
                 Start Task With Study Mode
               </Button>
@@ -135,7 +135,7 @@ function TaskCard({ task }) {
                   <p className='text-neutral-400'>CreateAt: {task.createdAt}</p>
                   <p className='mt-3 text-shadow-sm'>{MaxDescription}</p>
                   <div className='mt-5 flex justify-between items-center gap-5'>
-                    <Tag color={task.status === "in-progress" ? "blue" : "orange"}> {task.status}</Tag>
+                    <Tag color={task.status === "inprogress" ? "blue" : "orange"}> {task.status}</Tag>
                     <Button className='px-5! border-red-400/30! shadow! tracking-wide! border!' size='medium'>
                       <span className='text-neutral-700'>Priority:</span> {task.priority}
                     </Button>
@@ -183,9 +183,9 @@ function TaskCard({ task }) {
           <p className='text-gray-500 mt-2 text-shadow-sm min-h-[90px] '> {truncatedDescription} </p>
 
           <section className='flex justify-start items-center gap-3 '>
-            <Tag color={task.status === "in-progress" ? "blue" : "orange"} className='mt-1!'> {task.status}</Tag>
+            <Tag color={task.status === "inprogress" ? "blue" : "orange"} className='mt-1!'> {task.status}</Tag>
             {task.status == "completed" && (
-              <Tag color={task.status === "in-progress" ? "blue" : "orange"} className='mt-1!'> <p>Time Spent: {convertMillisecondsToHMS(task.duration)}</p> </Tag>
+              <Tag color={task.status === "inprogress" ? "blue" : "orange"} className='mt-1!'> <p>Time Spent: {convertMillisecondsToHMS(task.duration)}</p> </Tag>
             )}
           </section>             
             </div>

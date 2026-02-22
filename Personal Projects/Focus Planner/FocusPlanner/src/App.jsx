@@ -9,7 +9,6 @@ const navItems = [
   { icon: <FiArchive />, label: 'Assets', path:"assets"},
   { icon: <FiClock />, label: 'Lifetime', path:"lifeTime"},
   { icon: <FiList />, label: 'Bucket List', path:"bucketList"},
-  { icon: <FiUser />, label: 'MySelf', path:"mySelf"},
 ];
 
 function App() {

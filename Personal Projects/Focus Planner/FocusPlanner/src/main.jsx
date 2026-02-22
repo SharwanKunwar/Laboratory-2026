@@ -7,7 +7,6 @@ import ComposeTask from './pages/ComposeTask.jsx'
 import Dashboard from './pages/Dashboard.jsx'
 import ErrorPage from './pages/ErrorPage.jsx'
 import IntroductionPage from './pages/IntroductionPage.jsx'
-import MySelf from './pages/MySelf.jsx'
 
 const router = createBrowserRouter([
   {
@@ -26,10 +25,7 @@ const router = createBrowserRouter([
       {
         path:"composeTask",
         element: <ComposeTask/>
-      },{
-        path:"mySelf",
-        element: <MySelf/>
-      }
+      },
     ]
   }
 ])
