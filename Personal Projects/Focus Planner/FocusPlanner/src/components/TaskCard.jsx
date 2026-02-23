@@ -170,11 +170,11 @@ function TaskCard({ task }) {
         footer={null}
         onCancel={() => setIsNoteModalOpen(false)}
         title={`Task Notes of ${task.title}`}
-        width="99vw"
+        width="97vw"
         style={{ top: '13vh', left: '0vw' }}
-        bodyStyle={{ padding:"10px"}}
+        bodyStyle={{height:"74vh", padding:"10px"}}
       >
-        <div className="overflow-y-scroll h-[500px] hide-scrollbar flex gap-5">
+        <div className="overflow-y-scroll h-[74vh] hide-scrollbar flex gap-5">
           {/* task / question  */}
           <div className=' w-[50%] '>
             <div className='bg-gray-50 rounded-md shadow-sm p-5'>
@@ -191,9 +191,9 @@ function TaskCard({ task }) {
             </div>
           </div>
           {/* question task  */}
-          <div className=' w-[50%] px-5  rounded bg-yellow-400'>
+          <div className=' w-[50%] px-5  rounded bg-yellow-400 h-full'>
             <h1 className=' py-3 text-xl mb-3 border-b border-black/30 text-white'>Notes : </h1>
-              <div className=' p-5 rounded-md shadow-sm  text-shadow-sm h-[400px] overflow-y-scroll hide-scrollbar bg-black text-white' >
+              <div className=' p-5 rounded-md shadow-sm  text-shadow-sm overflow-y-scroll hide-scrollbar bg-black text-white h-[85%]' >
                 <p style={{ whiteSpace: 'pre-wrap' }}>
                   {task.notes || "No notes available for this task."}
                 </p>

@@ -5,7 +5,7 @@ import { Link, Outlet } from 'react-router-dom';
 const navItems = [
   { icon: <FiGrid />, label: 'Dashboard', path:"dashboard"},
   { icon: <FiEdit />, label: 'Compose Task', path:"composeTask"},
-  { icon: <FiTarget />, label: 'challange', path:"challange"},
+  { icon: <FiTarget />, label: 'challange', path:"challangePage"},
   { icon: <FiArchive />, label: 'Assets', path:"assets"},
   { icon: <FiClock />, label: 'Lifetime', path:"lifeTime"},
   { icon: <FiList />, label: 'Bucket List', path:"bucketList"},
@@ -16,7 +16,7 @@ function App() {
   const [isOpen, setIsOpen] = useState(false); // Sidebar open/close
 
   return (
-    <div className='bg-linear-to-br from-indigo-400 to-pink-400 w-screen h-screen flex justify-center items-center'>
+    <div className='bg-linear-to-br from-green-400 to-indigo-400 via-pink-400 w-screen h-screen flex justify-center items-center'>
       <div className='bg-white/30 backdrop-blur-sm w-[98%] h-[95%] rounded-lg shadow border border-white/50 flex'>
 
         {/* Left Sidebar */}
