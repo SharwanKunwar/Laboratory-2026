@@ -79,7 +79,7 @@ export default function ChallengePage() {
       initial={{ opacity: 0, y: 40 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
-      className="min-h-full bg-gray-600 text-white p-10 rounded-r-lg"
+      className="min-h-full bg-gray-600 text-white p-10 rounded-r-lg overflow-hidden hide-scrollbar"
     >
       {/* Header */}
       <motion.div
@@ -108,10 +108,10 @@ export default function ChallengePage() {
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.3 }}
-            className="col-span-8 bg-white/5 border border-white/10 rounded-2xl p-10 backdrop-blur-sm"
+            className="col-span-8 bg-white/5 border border-white/10 rounded-2xl p-10 backdrop-blur-sm "
           >
             {/* Progress Circle */}
-            <div className="flex justify-center items-center relative">
+            <div className="flex justify-center items-center relative ">
               <svg width="250" height="250">
                 <circle
                   cx="125"
