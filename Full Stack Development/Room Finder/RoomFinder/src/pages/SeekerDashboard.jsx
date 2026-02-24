@@ -4,7 +4,7 @@ import { MdVerified, MdHome } from "react-icons/md";
 import { FaBookmark } from "react-icons/fa";
 import { HiClipboardList } from "react-icons/hi";
 import { IoSettingsSharp } from "react-icons/io5";
-import SmallFilter from '../components/SmallFilter'
+
 import { Button, Modal } from 'antd';
 import FilterDrawer from '../components/FilterDrawer';
 import { Outlet, Link } from 'react-router-dom';
@@ -81,17 +81,7 @@ const [isFilterOpen, setIsFilterOpen] = useState(false);
             </ul>
           </div>
 
-          {/* FILTER */}
-          <div className="bg-white rounded-md shadow p-4 flex flex-col gap-3">
-            <SmallFilter />
-
-            <Button
-              type="primary"
-              onClick={() => setIsFilterOpen(true)}
-            >
-              More Filters
-            </Button>
-          </div>
+          
 
           <FilterDrawer
             open={isFilterOpen}

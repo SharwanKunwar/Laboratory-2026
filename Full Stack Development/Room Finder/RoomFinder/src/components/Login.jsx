@@ -26,7 +26,7 @@ function Login() {
   const handleFacebookLogin = () => console.log("Facebook login clicked");
 
   return (
-    <div className="bg-[#D0D5D7] w-screen h-screen flex justify-center items-center">
+    <div className="bg-[#D0D5D7] w-screen h-screen flex flex-wrap justify-center items-center">
       <div className="w-[70%] h-[90%] flex shadow-md shadow-indigo-950/20 rounded-2xl overflow-hidden">
         
         {/* Left Image Section */}
