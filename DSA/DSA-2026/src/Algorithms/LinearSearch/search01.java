@@ -47,4 +47,5 @@ public class search01 {
 
 
 // return Integer.MAX_VALUE if you are returning element itself coz there should -1 in the array
-// but if you are returning index of target element then no problem you can go with this -1 
+// but if you are returning index of target element then no problem you can go with this -1
+// or you can return true or false this is safe you know 😊
