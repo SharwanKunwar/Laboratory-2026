@@ -5,7 +5,7 @@ package Algorithms.LinearSearch;
 import java.util.Scanner;
 
 public class search01 {
-    static void main(String[] args) {
+    public static void main(String[] args) {
 
         //Scanner to takin target element from the user.
         Scanner in = new Scanner(System.in);
