@@ -40,3 +40,42 @@ Statistics is essential in IT for **understanding data, improving software quali
 **Summary:**  
 - **Primary data:** Firsthand, specific, accurate.  
 - **Secondary data:** Already available, less costly, may be less accurate.
+
+<br><br>
+
+## 3.  Define tabulation of data. The following data show the marks obtained by 40 BCA III Semester students in Statistics:
+
+    16, 24, 34, 42, 21, 7, 10, 23, 14, 38, 9, 11, 44, 35, 25, 12, 4, 20, 30, 40, 5, 40, 29, 36, 16, 27, 8, 33, 23, 14, 45, 32, 13, 41, 19, 32, 17, 22, 39, 45
+
+    Prepare a grouped frequency distribution table of the above data using inclusive-type intervals, taking 20–29 as the first class interval.
+
+
+
+
+**Tabulation of data** is the process of organizing raw data into a systematic table form. It helps in **simplifying data**, **making comparison easier**, and **showing frequency of occurrence clearly**.
+
+---
+
+## Given Data
+Marks obtained by 40 BCA III Sem students in Statistics:
+
+    16, 24, 34, 42, 21, 7, 10, 23, 14, 38, 9, 11, 44, 35, 25, 12, 4, 20, 30, 40, 5, 40, 29, 36, 16, 27, 8, 33, 23, 14, 45, 32, 13, 41, 19, 32, 17, 22, 39, 45
+
+
+---
+
+## Grouped Frequency Distribution (Inclusive Type)
+
+| Class Interval | Frequency (f) |
+|----------------|---------------|
+| 0 – 9          | 5             |
+| 10 – 19        | 9             |
+| 20 – 29        | 9             |
+| 30 – 39        | 9             |
+| 40 – 49        | 8             |
+
+**Total Students = 40**
+
+---
+
+*Note:* The table is of **inclusive type**, meaning **both lower and upper limits of the interval are included**.
