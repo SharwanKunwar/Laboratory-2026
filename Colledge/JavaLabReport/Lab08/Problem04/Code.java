@@ -7,11 +7,13 @@ package JavaLab.Lab08.Problem04;
 public class Code {
     public static void main(String[] args) {
 
+        // implementing Thread
         Thread02 t2 = new Thread02();
         t2.start();
 
-        Thread03 t3 = new Thread03();
-        t3.run();
+        // implementing Runnable
+        Thread03 t3 = new Thread03(t2);
+        t3.start();
 
         for(int i=0;i<10;i++){
             System.out.println("Main thread: "+Thread.currentThread().getName());

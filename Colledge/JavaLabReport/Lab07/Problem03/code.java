@@ -5,8 +5,12 @@ package JavaLab.Lab07.Problem03;
 // class Apple and Orange and override the eat() method to represent each fruit teste.
 
 public class code {
-    static void main(String[] args) {
+    public static void main(String[] args) {
 
+        Apple a = new Apple("Apple", "Sweet", 5);
+        Orange o = new Orange("Orange", "Sour", 4);
 
+        a.eat();
+        o.eat();
     }
 }
