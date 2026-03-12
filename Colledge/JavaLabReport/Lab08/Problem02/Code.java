@@ -1,7 +1,7 @@
 package JavaLab.Lab08.Problem02;
 
-// Write a java program that will read balance and withdraw amount from keyboard and display the remaining
-// balance on screen if the balance is greater than withdraw amount otherwise throw an exception with appropriate message.
+//2. Write a java program that will read balance and withdraw amount from keyboard and display the remaining balance on screen if the balance is greater than withdraw amount otherwise throw an exception with appropriate message.
+
 
 import java.util.Scanner;
 

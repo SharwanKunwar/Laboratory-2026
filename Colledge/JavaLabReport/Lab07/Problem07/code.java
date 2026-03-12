@@ -1,7 +1,7 @@
 package JavaLab.Lab07.Problem07;
 
-// Write a java program to create user defined package and containing Employee class( Eid, Ename, Eaddress, and Salary)
-// and use this package in another class or package.
+//7. Write a java program to create user defined package and containing Employee class( Eid, Ename, Eaddress, and Salary) and use this package in another class or package.
+
 
 import JavaLab.Lab07.Problem07.EmployeePackage.Employee;
 

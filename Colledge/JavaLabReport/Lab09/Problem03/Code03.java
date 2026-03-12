@@ -17,7 +17,7 @@ public class Code03 {
             FileWriter fw = new FileWriter("student.txt");
 
             // Taking input for 3 students
-            for (int i = 1; i <= 3; i++) {
+            for (int i = 1; i <= 2; i++) {
 
                 System.out.println("Enter Roll:");
                 String roll = sc.nextLine();

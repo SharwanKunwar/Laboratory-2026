@@ -1,6 +1,6 @@
 package JavaLab.Lab07.Problem01;
 
-// Write a Java program to find the factorial and nth Fibonacci term using recursion.
+//1. Write a Java program to find the factorial and nth Fibonacci term using recursion.
 
 public class code {
     public static void main(String[] args) {

@@ -5,7 +5,7 @@ package JavaLab.Lab04;
 import java.util.Scanner;
 
 public class Code01 {
-    static void main(String[] args) {
+    public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);
 

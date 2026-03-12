@@ -1,6 +1,6 @@
 package JavaLab.Lab08.Problem01;
 
-// Write a java program to demonstrate ArithmeticException, ArrayIndexOutOfBoundsException, and NumberFormateException
+//1. Write a java program to demonstrate ArithmeticException, ArrayIndexOutOfBoundsException, and NumberFormateException
 
 import java.util.Scanner;
 

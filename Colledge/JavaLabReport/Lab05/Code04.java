@@ -1,9 +1,9 @@
 package JavaLab.Lab05;
 
-// Write a java program to multiply 3X3 matrix and display resultant matrix.
+//4. Write a java program to multiply 3X3 matrix and display resultant matrix.
 
 public class Code04 {
-    static void main(String[] args) {
+    public static void main(String[] args) {
 
         System.out.println("Matrix multiply");
 

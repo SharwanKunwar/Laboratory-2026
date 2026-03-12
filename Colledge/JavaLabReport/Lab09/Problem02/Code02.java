@@ -4,7 +4,7 @@ import java.io.FileWriter;
 import java.io.FileReader;
 import java.io.IOException;
 
-// Write a java program to read and write file using FileWriter and FileReader class.
+//2. Write a java program to read and write file using FileWriter and FileReader class.
 
 public class Code02 {
 

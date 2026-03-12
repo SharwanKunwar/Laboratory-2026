@@ -3,7 +3,7 @@ package JavaLab.Lab05;
 // Write a java program to find sum of array element of size n.
 
 public class Code01 {
-    static void main(String[] args) {
+    public static void main(String[] args) {
 
         int [] arr = {1,2,3,4,5,6};
         int sum = 0;

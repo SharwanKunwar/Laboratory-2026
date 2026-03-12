@@ -2,13 +2,11 @@ package JavaLab.Lab05;
 
 // Write a java program to sort array element in ascending order.
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
-import java.util.Collection;
-import java.util.Collections;
+
 
 public class Code03 {
-    static void main(String[] args) {
+    public static void main(String[] args) {
         Integer [] arr = {1,4,3,2,5};
 
         // before sort

@@ -1,6 +1,6 @@
 package JavaLab.Lab08.Problem06;
 
-// Write a java program to demonstrate the concept of synchronization in multithreaded applications.
+//6. Write a java program to demonstrate the concept of synchronization in multithreaded applications.
 
 class Counter {
     int count = 0;
