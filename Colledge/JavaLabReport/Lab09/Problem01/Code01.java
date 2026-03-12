@@ -4,6 +4,9 @@ import java.io.FileOutputStream;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+// Write a java program to write a sentence "java is object-oriented programming" using FileOutputStream class and
+// read this file using FileInputStream class and find total number of vowel in the file.
+
 public class Code01 {
 
     public static void main(String[] args) {
