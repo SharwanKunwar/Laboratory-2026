@@ -2,7 +2,9 @@ package JavaLab.Lab10.Problem06;
 
 import javax.swing.*;
 
-public class Code01 {
+//6. Write a java program to illustrate the following Swing component a. JMenu b. JTable c. JInternalFrame and JDesktop
+
+public class Code06 {
 
     public static void main(String[] args) {
 

@@ -2,6 +2,10 @@ package JavaLab.Lab10.Problem05;
 
 import javax.swing.*;
 
+/*
+5. Write a java program using swing component to create student registration form with field(text field for name, address, email, password, radio button for Gender, checkbox for Hobbies,
+    Country as dropdown list, opinion as text area, one button for submit) your program display the student information when user click on submit button.
+ */
 public class Code05 {
     public static void main(String[] args) {
         JFrame f = new JFrame("Student Registration Form");
