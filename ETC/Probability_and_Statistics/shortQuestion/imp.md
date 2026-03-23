@@ -18,3 +18,12 @@ Median is the middle value in a dataset when the data are arranged in ascending 
 
 # Mode
 Mode is the value that appears most frequently in a dataset. It helps identify the most common observation and is especially useful in understanding patterns in categorical or numerical data.
+
+# Correlation
+Correlation is a statistical method used to measure the strength and direction of the relationship between two variables. It shows whether variables move together positively, negatively, or have no relationship at all.
+
+# Regression
+Regression is a statistical technique used to examine the relationship between dependent and independent variables. It helps in predicting the value of one variable based on the changes in another variable.
+
+# ANOVA
+ANOVA (Analysis of Variance) is a statistical method used to compare the means of three or more groups. It helps determine whether there are significant differences among group averages in a dataset.

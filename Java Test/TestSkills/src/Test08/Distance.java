@@ -1,49 +1,43 @@
 package Test08;
 
-public class Distance {
-    int feet, inch;
+public class Distance{
+    int feet;
+    int inches;
 
-    Distance(){
+    public Distance(){
         feet = 0;
-        inch = 0;
+        inches = 0;
     }
-
-    Distance(int feet, int inch) {
+    public Distance(int feet, int inches){
         this.feet = feet;
-        this.inch = inch;
+        this.inches = inches;
     }
-
     // add distance
     public Distance add(Distance distance){
+        int f = this.feet + distance.feet;
+        int i = this.inches + distance.inches;
 
-        //
-        int f = this.feet+ distance.feet;
-        int i = this.inch+ distance.inch;
-
-        //
         if(i>=12){
             f+=i/12;
             i = i%12;
         }
-        //
         return new Distance(f,i);
     }
 
     // sub distance
-    public Distance subtract(Distance distance){
+    public  Distance sub(Distance distance){
         int f = this.feet - distance.feet;
-        int i = this.inch - distance.inch;
+        int i = this.inches - distance.inches;
 
-        if(i<0){
+        if(i < 0){
             f-=1;
             i+=12;
         }
-        return  new  Distance(f,i);
+        return new Distance(f,i);
     }
 
     // display distance
-    public void displayDistance(){
-        System.out.println("Feet: " + this.feet+ " Inches: " + this.inch);
+    public void display(){
+        System.out.println(feet+" : "+inches);
     }
-
 }

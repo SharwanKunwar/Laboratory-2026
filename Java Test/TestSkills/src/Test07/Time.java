@@ -5,52 +5,48 @@ public class Time {
     int minute;
     int second;
 
-    Time(int hour, int minute, int second) {
+    public Time(int hour, int minute, int second) {
         this.hour = hour;
         this.minute = minute;
         this.second = second;
     }
+    // add time
+    public Time add(Time time){
+        int h = this.hour + time.hour;
+        int m = this.minute + time.minute;
+        int s = this.second + time.second;
 
-    // Add Time
-    public Time add(Time time) {
-        int sec = this.second + time.second;
-        int min = this.minute + time.minute;
-        int hr = this.hour + time.hour;
+        // handle second
+        m+= s/60;
+        s = s%60;
 
-        // Handle seconds
-        min += sec / 60;
-        sec = sec % 60;
+        // handle minute
+        h+=m/60;
+        m=m%60;
 
-        // Handle minutes
-        hr += min / 60;
-        min = min % 60;
-
-        return new Time(hr, min, sec);
+        return new Time(h,m,s);
     }
 
-    // Subtract Time
-    public Time subtract(Time time) {
-        int sec = this.second - time.second;
-        int min = this.minute - time.minute;
-        int hr = this.hour - time.hour;
+    // sub time
+    public Time subtract(Time time){
+        int h = this.hour - time.hour;
+        int m = this.minute - time.minute;
+        int s = this.second - time.second;
 
-        // Handle seconds borrow
-        if (sec < 0) {
-            sec += 60;
-            min--;
+        // handle second
+        if(s<0){
+            s+=60;
+            m--;
         }
-
-        // Handle minutes borrow
-        if (min < 0) {
-            min += 60;
-            hr--;
+        // handle minute
+        if(m<0){
+            m+=60;
+            h--;
         }
-
-        return new Time(hr, min, sec);
+        return new  Time(h,m,s);
     }
-
-    // Display Time
-    public void display() {
-        System.out.println(hour + ":" + minute + ":" + second);
+    // display time
+    public void displayTime(){
+        System.out.println(hour+":"+minute+":"+second);
     }
 }
