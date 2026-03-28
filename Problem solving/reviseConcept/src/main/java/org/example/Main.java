@@ -1,17 +1,24 @@
 package org.example;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
-    public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+import org.example.JavaNumberPrograms.Rambo;
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+public class Main {
+    public static void main(String[] args) throws InterruptedException {
+
+        // Creating Rambo... because normal programmers use Calculator
+        // we are not gonna use same kinda shit
+        Rambo assistant = new Rambo();
+
+        // Asking Rambo to calculate Fibonacci up to 5.
+        // Hope the numbers survive the operation.
+//        assistant.processFibonacci(5);
+
+        // play music calling
+//        assistant.playMusic();
+
+        // shutdown
+//        assistant.shutdown();
+
+
     }
 }
