@@ -19,6 +19,9 @@ public class Main {
         // shutdown
 //        assistant.shutdown();
 
+        // test me
+        assistant.TestMe();
+
 
     }
 }
