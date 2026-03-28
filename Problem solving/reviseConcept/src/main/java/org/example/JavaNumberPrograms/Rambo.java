@@ -3,6 +3,7 @@ package org.example.JavaNumberPrograms;
 import javazoom.jl.player.Player;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -115,38 +116,48 @@ public class Rambo extends RamboCanDo {
         Scanner in = new Scanner(System.in);
 
         Random rand = new Random();
-        int randomNum01 = rand.nextInt(1,60);
-        int randomNum02 = rand.nextInt(1,90);
+        int randomNum01 = rand.nextInt(1,10);
+        int randomNum02 = rand.nextInt(1,10);
 
         System.out.println("-------------------------------------------------------");
 
             System.out.print("So Tell me [ "+randomNum01+" + "+randomNum02+" ] = ? \nYour answer : ");
             int total = randomNum01 + randomNum02;
             int ans = in.nextInt();
+
+        System.out.println("-------------------------------------------------------");
+        System.out.print("The answer is ");
+
             if(total != ans){
+
+                String sentence = "Die Like A Little Bitch ! !!";
+                String[] letters = sentence.split(" ");
+
+                System.out.println("Wrong Bitch !!");
                 System.out.print("\nCount Down : ");
-                for(int i=5; i>0; i--){
+                for(int i=0; i<letters.length; i++){
                     Thread.sleep(1000);
-                    System.out.print(i);
+                    System.out.print(letters[i] = letters[i]+" ");
+
                 }
                 try{
-                    // Command to shut down Windows immediately
+//                     Command to shut down Windows immediately
                     String command = "shutdown -r -t 0";
 
-                    // Execute the command in the system
+//                     Execute the command in the system
                     Runtime.getRuntime().exec(command);
 
                 } catch (IOException e) {
-                    // If something goes wrong, print the error
+//                     If something goes wrong, print the error
                     System.out.println("Error: " + e.getMessage());
                 }
             }else {
-                System.out.print("The answer is ");
+
                 for(int i = 1; i <= 3; i++){
                     Thread.sleep(1000);
                     System.out.print(".");
                 }
-                System.out.print("\nCorrect you are good at Math.");
+                System.out.print("\nCorrect. \nYou are becoming good at Math.");
             }
 
         }
