@@ -176,6 +176,7 @@ public class Rambo extends RamboCanDo {
         else System.out.println("Not Prime !");
     }
 
+    @Override
     public void primeFactors(int num) {
         for(int i=2; i*i<=num; i++){
             if(num%i==0){
@@ -184,6 +185,18 @@ public class Rambo extends RamboCanDo {
             }
         }
     }
+
+    public void reverseNumber(int num) {
+        int org = num;
+        int rev = 0;
+
+        while(num!=0){
+            rev = rev*10 + num%10;
+            num/=10;
+        }
+        System.out.println("The reversed number is "+rev);
+    }
+
 
     }
 
