@@ -186,6 +186,7 @@ public class Rambo extends RamboCanDo {
         }
     }
 
+    @Override
     public void reverseNumber(int num) {
         int org = num;
         int rev = 0;
@@ -195,6 +196,16 @@ public class Rambo extends RamboCanDo {
             num/=10;
         }
         System.out.println("The reversed number is "+rev);
+    }
+
+    @Override
+    public void sumDigit(int num) {
+        int sum = 0;
+        while(num!=0){
+            sum = sum + num%10;
+            num/=10;
+        }
+        System.out.println("The sum is "+sum);
     }
 
 

@@ -27,6 +27,7 @@ public class Main {
         assistant.checkPrime(6);
         assistant.primeFactors(18);
         assistant.reverseNumber(123);
+        assistant.sumDigit(123);
 
 
     }
