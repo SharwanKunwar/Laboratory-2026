@@ -20,7 +20,12 @@ public class Main {
 //        assistant.shutdown();
 
         // test me
-        assistant.TestMe();
+//        assistant.TestMe();
+
+
+//        / -------------------------------------------------
+        assistant.checkPrime(6);
+        assistant.primeFactors(18);
 
 
     }

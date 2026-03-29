@@ -10,4 +10,6 @@ abstract public class RamboCanDo {
     abstract public void playMusic();
     abstract public void shutdown() throws InterruptedException;
     abstract public void TestMe() throws InterruptedException;
+    abstract public void checkPrime(int num);
+    abstract public void primeFactors(int num);
 }

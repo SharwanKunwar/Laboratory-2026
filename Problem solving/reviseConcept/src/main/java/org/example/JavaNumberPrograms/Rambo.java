@@ -162,5 +162,28 @@ public class Rambo extends RamboCanDo {
 
         }
 
+    @Override
+    public void checkPrime(int num) {
+        boolean isPrime = true;
+
+        for(int i=2; i*i<=num; i++){
+            if(num%i==0){
+                isPrime = false;
+                break;
+            }
+        }
+        if(isPrime) System.out.println("Prime !");
+        else System.out.println("Not Prime !");
+    }
+
+    public void primeFactors(int num) {
+        for(int i=2; i*i<=num; i++){
+            if(num%i==0){
+                System.out.println(i+" caught ");
+                num/=i;
+            }
+        }
+    }
+
     }
 
