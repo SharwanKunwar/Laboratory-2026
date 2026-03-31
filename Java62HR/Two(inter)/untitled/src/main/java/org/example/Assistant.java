@@ -18,5 +18,25 @@ public class Assistant extends AssistantNoteBook {
         System.out.println("\nSum of "+arr.length+" is "+sum);
     }
 
+    @Override
+    public void reverseString(String str) {
+
+    }
+
+    @Override
+    public void palindrome(String str) {
+
+    }
+
+    @Override
+    public void fibonacci(int n) {
+
+    }
+
+    @Override
+    public void factorial(int n) {
+
+    }
+
 
 }
