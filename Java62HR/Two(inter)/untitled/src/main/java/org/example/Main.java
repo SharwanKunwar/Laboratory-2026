@@ -10,7 +10,11 @@ public class Main {
 
         // object
         Assistant assistant = new Assistant();
-        assistant.displayArray(marks);
-        assistant.sumArray(marks);
+//        assistant.displayArray(marks);
+//        assistant.sumArray(marks);
+//        assistant.reverseString("love");
+//        assistant.palindrome("madam");
+        assistant.fibonacci(5);
+
     }
 }

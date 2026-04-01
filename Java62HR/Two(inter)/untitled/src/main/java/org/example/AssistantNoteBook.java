@@ -9,7 +9,7 @@ abstract public class AssistantNoteBook extends BasicQuestions{
     abstract public void reverseString(String str);
 
     // Check for palindrome
-    abstract public void palindrome(String str);
+    abstract public void palindrome(String str01);
 
     // Fibonacci Series
     abstract public void fibonacci(int n);
