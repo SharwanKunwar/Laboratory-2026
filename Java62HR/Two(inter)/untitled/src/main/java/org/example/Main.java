@@ -14,7 +14,7 @@ public class Main {
 //        assistant.sumArray(marks);
 //        assistant.reverseString("love");
 //        assistant.palindrome("madam");
-        assistant.fibonacci(5);
-
+//        assistant.fibonacci(5);
+//        assistant.factorial(5);
     }
 }
