@@ -43,10 +43,9 @@ public class Assistant extends AssistantNoteBook {
     public void fibonacci(int n) {
         int first = 0;
         int second = 1;
-        int next;
 
         for(int i=1; i<=n; i++){
-            next = first + second;
+           int next = first + second;
             first = second;
             second = next;
             System.out.println(first);
@@ -64,5 +63,16 @@ public class Assistant extends AssistantNoteBook {
         System.out.println("Factorial is "+fact);
     }
 
+    @Override
+    public void primeNumberCheck(int n) {
+        boolean isPrime = true;
+        for(int i=2; i*i<=n; i++){
+            if(n%i==0){
+                isPrime = false;
+            }
+        }
+        if(isPrime) System.out.println("Prime number is "+n);
+        else System.out.println("Prime number is not "+n);
+    }
 
 }
