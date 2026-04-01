@@ -9,4 +9,5 @@ abstract public class AssistantNoteBook {
     abstract public void fibonacci(int n);
     abstract public void factorial(int n);
     abstract public void primeNumberCheck(int n);
+    abstract public void countVowelsAndConsonants(String str);
 }

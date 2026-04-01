@@ -16,6 +16,7 @@ public class Main {
 //        assistant.palindrome("madam");
 //        assistant.fibonacci(5);
 //        assistant.factorial(5);
-        assistant.primeNumberCheck(11);
+//        assistant.primeNumberCheck(11);
+        assistant.countVowelsAndConsonants("sharwan");
     }
 }

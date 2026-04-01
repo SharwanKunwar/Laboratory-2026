@@ -75,4 +75,15 @@ public class Assistant extends AssistantNoteBook {
         else System.out.println("Prime number is not "+n);
     }
 
+    public void countVowelsAndConsonants(String str){
+        int countVowels = 0;
+        int countConsonants = 0;
+
+        for(char ch : str.toCharArray()){
+            if("aeiouAEIOU".indexOf(ch) != -1) countVowels++;
+            else countConsonants++;
+        }
+        System.out.println("Vowels count : "+countVowels);
+        System.out.println("Consonants count : "+countConsonants);
+    }
 }
