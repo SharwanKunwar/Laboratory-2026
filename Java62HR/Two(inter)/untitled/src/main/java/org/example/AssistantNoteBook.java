@@ -10,4 +10,5 @@ abstract public class AssistantNoteBook {
     abstract public void factorial(int n);
     abstract public void primeNumberCheck(int n);
     abstract public void countVowelsAndConsonants(String str);
+    abstract public void sortArray(int[] arr);
 }

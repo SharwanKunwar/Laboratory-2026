@@ -75,6 +75,7 @@ public class Assistant extends AssistantNoteBook {
         else System.out.println("Prime number is not "+n);
     }
 
+    @Override
     public void countVowelsAndConsonants(String str){
         int countVowels = 0;
         int countConsonants = 0;
@@ -86,4 +87,23 @@ public class Assistant extends AssistantNoteBook {
         System.out.println("Vowels count : "+countVowels);
         System.out.println("Consonants count : "+countConsonants);
     }
+
+    @Override
+    public void sortArray(int[] arr) {
+
+        for(int i=0; i<arr.length-1; i++){
+            for(int j=i+1; j<arr.length; j++){
+                if(arr[i] > arr[j]){
+                    int temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+        }
+        for(int array: arr){
+            System.out.print(array + " ");
+        }
+    }
+
+
 }

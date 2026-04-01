@@ -6,7 +6,7 @@ public class Main {
         System.out.println("let's practice");
         System.out.println("--------------------------------------------------------------");
 
-        int[] marks = new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        int[] marks = new int[]{11, 12, 34, 24, 58, 96, 57, 18, 9, 101};
 
         // object
         Assistant assistant = new Assistant();
@@ -17,6 +17,11 @@ public class Main {
 //        assistant.fibonacci(5);
 //        assistant.factorial(5);
 //        assistant.primeNumberCheck(11);
-        assistant.countVowelsAndConsonants("sharwan");
+//        assistant.countVowelsAndConsonants("sharwan");
+        assistant.sortArray(marks);
+
+
+
+
     }
 }
