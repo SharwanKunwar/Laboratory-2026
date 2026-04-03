@@ -14,4 +14,5 @@ abstract public class RamboCanDo {
     abstract public void primeFactors(int num);
     abstract public void reverseNumber(int num);
     abstract public void sumDigit(int digit);
+
 }
