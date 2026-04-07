@@ -142,9 +142,15 @@ sb.append(" World");  // same object modified
 
 ***check Palindrome String***
 ```java
-// Reverse the string
+    // Reverse the string
         for(int i = input.length() - 1; i >= 0; i--) {
             reversed = reversed + input.charAt(i);
+        }
+    // Check palindrome
+        if(input.equalsIgnoreCase(reversed)) {
+            System.out.println("Palindrome");
+        } else {
+            System.out.println("Not Palindrome");
         }
 ```
 
