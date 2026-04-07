@@ -313,3 +313,191 @@ public class JDBCExample {
     }
 }
 ```
+
+
+<br><br>
+
+## 7. What is difference between class and interface in java ? create a java class Time with three attribute hours, minutes, and seconds. use appropriate constructors to initialize instance variable. Use method to display time in HH:MM:SS format, add and subtract two time object. implement the class to add, subtract and display time object.
+
+| Feature          | Class                        | Interface                                                          |
+| ---------------- | ---------------------------- | ------------------------------------------------------------------ |
+| Definition       | Blueprint for objects        | Blueprint for behavior                                             |
+| Methods          | Can have implemented methods | Only abstract methods (before Java 8), now can have default/static |
+| Variables        | Instance variables allowed   | Only public static final (constants)                               |
+| Constructors     | Yes                          | No                                                                 |
+| Inheritance      | Single inheritance           | Multiple inheritance supported                                     |
+| Access Modifiers | All types                    | Methods are public by default                                      |
+| Object Creation  | Can create objects           | Cannot create objects directly                                     |
+
+**Program**
+```java
+class Time {
+    int hours, minutes, seconds;
+
+    // Default Constructor
+    Time() {
+        hours = 0;
+        minutes = 0;
+        seconds = 0;
+    }
+
+    // Parameterized Constructor
+    Time(int h, int m, int s) {
+        hours = h;
+        minutes = m;
+        seconds = s;
+    }
+
+    // Display Method
+    void display() {
+        System.out.printf("%02d:%02d:%02d\n", hours, minutes, seconds);
+    }
+
+    // Add Time
+    Time add(Time t) {
+        Time result = new Time();
+
+        result.seconds = this.seconds + t.seconds;
+        result.minutes = this.minutes + t.minutes + (result.seconds / 60);
+        result.hours = this.hours + t.hours + (result.minutes / 60);
+
+        result.seconds %= 60;
+        result.minutes %= 60;
+
+        return result;
+    }
+
+    // Subtract Time
+    Time subtract(Time t) {
+        Time result = new Time();
+
+        int totalSec1 = this.hours * 3600 + this.minutes * 60 + this.seconds;
+        int totalSec2 = t.hours * 3600 + t.minutes * 60 + t.seconds;
+
+        int diff = totalSec1 - totalSec2;
+
+        result.hours = diff / 3600;
+        diff %= 3600;
+
+        result.minutes = diff / 60;
+        result.seconds = diff % 60;
+
+        return result;
+    }
+
+    // Main Method
+    public static void main(String[] args) {
+        Time t1 = new Time(2, 45, 50);
+        Time t2 = new Time(1, 20, 30);
+
+        System.out.print("Time 1: ");
+        t1.display();
+
+        System.out.print("Time 2: ");
+        t2.display();
+
+        Time sum = t1.add(t2);
+        System.out.print("Addition: ");
+        sum.display();
+
+        Time diff = t1.subtract(t2);
+        System.out.print("Subtraction: ");
+        diff.display();
+    }
+}
+```
+
+
+<br><br>
+
+# Distance calculation program ( add and sub )
+```java
+class Distance {
+    int feet;
+    int inch;
+
+    // Default Constructor
+    Distance() {
+        feet = 0;
+        inch = 0;
+    }
+
+    // Parameterized Constructor
+    Distance(int f, int i) {
+        feet = f;
+        inch = i;
+
+        normalize();
+    }
+
+    // Normalize (convert 12 inches = 1 foot)
+    void normalize() {
+        if (inch >= 12) {
+            feet += inch / 12;
+            inch = inch % 12;
+        }
+
+        if (inch < 0) {
+            feet -= 1;
+            inch += 12;
+        }
+    }
+
+    // Display Method
+    void display() {
+        System.out.println(feet + "' " + inch + "\"");
+    }
+
+    // Add Method
+    Distance add(Distance d) {
+        Distance result = new Distance();
+
+        result.feet = this.feet + d.feet;
+        result.inch = this.inch + d.inch;
+
+        result.normalize();
+
+        return result;
+    }
+
+    // Subtract Method
+    Distance subtract(Distance d) {
+        Distance result = new Distance();
+
+        int totalInch1 = this.feet * 12 + this.inch;
+        int totalInch2 = d.feet * 12 + d.inch;
+
+        int diff = totalInch1 - totalInch2;
+
+        result.feet = diff / 12;
+        result.inch = diff % 12;
+
+        if (result.inch < 0) {
+            result.inch += 12;
+            result.feet -= 1;
+        }
+
+        return result;
+    }
+
+    // Main Method
+    public static void main(String[] args) {
+        Distance d1 = new Distance(5, 8);
+        Distance d2 = new Distance(3, 10);
+
+        System.out.print("Distance 1: ");
+        d1.display();
+
+        System.out.print("Distance 2: ");
+        d2.display();
+
+        Distance sum = d1.add(d2);
+        System.out.print("Addition: ");
+        sum.display();
+
+        Distance diff = d1.subtract(d2);
+        System.out.print("Subtraction: ");
+        diff.display();
+    }
+}
+```
