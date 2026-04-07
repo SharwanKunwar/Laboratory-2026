@@ -147,3 +147,169 @@ sb.append(" World");  // same object modified
             reversed = reversed + input.charAt(i);
         }
 ```
+
+<br><br>
+
+## 4. Why we need file handling in java ? Write java program to read file into a variable and then write a variable's content into another file.
+File handling in Java is used to store, read, and manipulate data permanently in files instead of temporary memory.
+
+**Need for File Handling**
+* ***Permanent Storage***
+    - Data is saved even after the program ends.
+* ***Data Sharing***
+    - Files can be accessed by different programs.
+* ***Handling Large Data***
+    - Efficient for storing large amounts of data.
+* ***Data Backup***
+    - Helps in maintaining records and logs.
+* ***Input/Output Operations***
+    - Enables reading from and writing to files.
+
+
+***Program***
+```java
+import java.io.*;
+
+public class FileCopyExample {
+    public static void main(String[] args) {
+
+        String data = "";
+
+        try {
+            // Read from file
+            FileReader fr = new FileReader("input.txt");
+            BufferedReader br = new BufferedReader(fr);
+
+            String line;
+            while ((line = br.readLine()) != null) {
+                data = data + line + "\n";
+            }
+            br.close();
+
+            // Write to another file
+            FileWriter fw = new FileWriter("output.txt");
+            BufferedWriter bw = new BufferedWriter(fw);
+
+            bw.write(data);
+            bw.close();
+
+            System.out.println("File copied successfully.");
+
+        } catch (IOException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+    }
+}
+```
+
+<br><br>
+
+## 5. What is the purpose of valueOf() method in wrapper classes ? write a java program to generate random integer, double and bytes.
+The valueOf() method is used to convert a primitive data type or a String into its corresponding wrapper class object.
+
+**Purpose**
+* Converts primitive values into objects
+    Example: int → Integer
+* Converts String to wrapper object
+    Example: "10" → Integer
+* Helps in autoboxing and object manipulation
+* Improves performance by reusing cached objects (in some cases)
+
+***Program***
+```java
+import java.util.Random;
+
+public class RandomExample {
+    public static void main(String[] args) {
+
+        Random rand = new Random();
+
+        // Generate random integer
+        int randomInt = rand.nextInt(100); // 0 to 99
+
+        // Generate random double
+        double randomDouble = rand.nextDouble(); // 0.0 to 1.0
+
+        // Generate random bytes
+        byte[] randomBytes = new byte[5];
+        rand.nextBytes(randomBytes);
+
+        // Display results
+        System.out.println("Random Integer: " + randomInt);
+        System.out.println("Random Double: " + randomDouble);
+
+        System.out.print("Random Bytes: ");
+        for(byte b : randomBytes) {
+            System.out.print(b + " ");
+        }
+    }
+}
+```
+
+## 6. What is JDBC? Write java program to connect database college and display all student information (Roll, Name, Address and Program) from student table.
+JDBC (Java Database Connectivity) is an API that allows Java programs to connect and interact with databases.
+
+**Purpose of JDBC**
+* Establish connection with database
+* Execute SQL queries
+* Retrieve and update data
+* Manage transactions
+
+**Main Components**
+* ***DriverManager*** → Establishes connection
+* ***Connection*** → Represents database connection
+* ***Statement*** → Executes SQL queries
+* ***ResultSet*** → Stores query results
+
+```
+Program to Connect Database and Display Student Data
+```
+* Database name: college
+* Table name: student
+* Columns: Roll, Name, Address, Program
+
+```java
+import java.sql.*;
+
+public class JDBCExample {
+    public static void main(String[] args) {
+
+        // Database URL, username, password
+        String url = "jdbc:mysql://localhost:3306/college";
+        String user = "root";
+        String password = "root";
+
+        try {
+            // Load driver (optional for newer versions)
+            Class.forName("com.mysql.cj.jdbc.Driver");
+
+            // Establish connection
+            Connection con = DriverManager.getConnection(url, user, password);
+
+            // Create statement
+            Statement stmt = con.createStatement();
+
+            // Execute query
+            String query = "SELECT * FROM student";
+            ResultSet rs = stmt.executeQuery(query);
+
+            // Display data
+            System.out.println("Roll\tName\tAddress\tProgram");
+            while (rs.next()) {
+                int roll = rs.getInt("Roll");
+                String name = rs.getString("Name");
+                String address = rs.getString("Address");
+                String program = rs.getString("Program");
+
+                System.out.println(roll + "\t" + name + "\t" + address + "\t" + program);
+            }
+
+            // Close connection
+            con.close();
+
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+    }
+}
+```
