@@ -1,3 +1,4 @@
+# #Short question for 5 marks 
 ## 1. Explain what are the tags and attributes for form in HTML document?
 An HTML form is used to collect user input and send it to a server for processing.
 
@@ -215,3 +216,329 @@ Because HTTP is stateless (it forgets everything like a goldfish), sessions help
 **Online shopping cart**
 * Items added to cart are stored in session.
 * Even if user moves to another page, items remain.
+
+<br><br><br>
+
+# #Long questions for 10 marks 
+
+### 1. Write a HTML and CSS code design a data entry form for marks entry of a students using different html elements like (table, image , formatting tags, links).
+
+### HTML + CSS: Student Marks Entry Form
+
+**Code:**
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Marks Entry Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        .container {
+            width: 60%;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            color: darkblue;
+        }
+
+        img {
+            display: block;
+            margin: auto;
+            width: 100px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: lightblue;
+        }
+
+        input[type="text"], input[type="number"] {
+            width: 90%;
+            padding: 5px;
+        }
+
+        .btn {
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: darkblue;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: green;
+        }
+
+        .link {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Image -->
+    <img src="https://via.placeholder.com/100" alt="School Logo">
+
+    <!-- Heading with formatting -->
+    <h1><u><b>Student Marks Entry Form</b></u></h1>
+
+    <form>
+
+        <!-- Student Info -->
+        <p><b>Name:</b> <input type="text" name="name"></p>
+        <p><b>Roll No:</b> <input type="text" name="roll"></p>
+
+        <!-- Table for Marks -->
+        <table>
+            <tr>
+                <th>Subject</th>
+                <th>Marks</th>
+            </tr>
+            <tr>
+                <td>Math</td>
+                <td><input type="number" name="math"></td>
+            </tr>
+            <tr>
+                <td>Science</td>
+                <td><input type="number" name="science"></td>
+            </tr>
+            <tr>
+                <td>English</td>
+                <td><input type="number" name="english"></td>
+            </tr>
+            <tr>
+                <td>Computer</td>
+                <td><input type="number" name="computer"></td>
+            </tr>
+        </table>
+
+        <!-- Buttons -->
+        <center>
+            <input type="submit" value="Submit" class="btn">
+            <input type="reset" value="Reset" class="btn">
+        </center>
+
+    </form>
+
+    <!-- Link -->
+    <div class="link">
+        <p><i>Visit our website:</i> 
+        <a href="https://example.com" target="_blank">Click Here</a></p>
+    </div>
+
+</div>
+
+</body>
+</html>
+```
+
+#### 🔹 What This Includes (so examiner stays calm)
+* ✔ Form (form, input)
+* ✔ Table (table)
+* ✔ Image (img)
+* ✔ Formatting tags (b, u, i)
+* ✔ Link (a)
+* ✔ CSS styling
+
+
+<br><br>
+
+## 2. Develop a simple web page that asks the users input (product Name , Rate , Quantity, Supplier, data) and store into database using server-side script.
+
+## ✍️ Simple Web Page with Database Storage
+### 🔹 1. HTML Form (Frontend)
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Entry Form</title>
+</head>
+<body>
+
+<h2>Product Entry Form</h2>
+
+<form action="insert.php" method="post">
+    Product Name: <input type="text" name="name"><br><br>
+    Rate: <input type="number" name="rate"><br><br>
+    Quantity: <input type="number" name="qty"><br><br>
+    Supplier: <input type="text" name="supplier"><br><br>
+    Date: <input type="date" name="date"><br><br>
+
+    <input type="submit" value="Save">
+</form>
+
+</body>
+</html>
+```
+### 🔹 2. Database (MySQL)
+```sql
+CREATE DATABASE product_db;
+
+USE product_db;
+
+CREATE TABLE product (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50),
+    rate INT,
+    quantity INT,
+    supplier VARCHAR(50),
+    date DATE
+);
+```
+
+### 🔹 3. Server-Side Script (PHP)
+    Create a file insert.php
+
+```php
+<?php
+
+$conn = new mysqli("localhost", "root", "", "product_db");
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Get form data
+$name = $_POST['name'];
+$rate = $_POST['rate'];
+$qty = $_POST['qty'];
+$supplier = $_POST['supplier'];
+$date = $_POST['date'];
+
+// Insert query
+$sql = "INSERT INTO product (name, rate, quantity, supplier, date)
+        VALUES ('$name', '$rate', '$qty', '$supplier', '$date')";
+
+if ($conn->query($sql) === TRUE) {
+    echo "Data inserted successfully";
+} else {
+    echo "Error: " . $conn->error;
+}
+
+$conn->close();
+
+?>
+```
+
+#### 🔹 Explanation (write this for theory marks)
+* HTML form collects user input.
+* Data is sent to the server using POST method.
+* PHP script connects to MySQL database.
+* SQL query inserts data into the table.
+* Confirmation message is displayed after successful insertion.
+
+<br><br>
+
+### 4. What are the rules for rules for creating XML document? Write a XML code to store following information about employee. 
+* Each employee has a name, address, phone , dept and website element.
+* Address might appear multiple times
+* Address has attribute name "type" with value permanent and temporary
+* department have attribute extra 
+* Phone must be 10 digits.
+
+<br>
+
+### ✍️ Rules for Creating an XML Document
+    XML (eXtensible Markup Language) must follow strict syntax rules:
+
+#### 🔹 1. Must have a root element
+    Every XML document must contain one single root element.
+#### 🔹 2. Tags must be properly closed
+    Every opening tag must have a closing tag.
+**Example**
+```xml
+<name>John</name>
+```
+
+#### 🔹 3. Tags are case-sensitive
+
+```xml
+<Name> and <name> are different
+```
+
+#### 🔹 4. Proper nesting is required
+    Tags must be nested correctly.
+    <a><b></b></a>
+
+#### 🔹 5. Attributes must be quoted
+```xml
+<address type="permanent">
+```
+
+#### 🔹 6. No duplicate attributes in same element
+    Each attribute name must be unique.
+
+#### 🔹 7. Well-formed structure required
+    XML must follow all rules strictly, otherwise it is invalid.
+
+#### 🔹 8. Special characters must be escaped
+**Example:**
+```xml
+ & → &amp;
+ < → &lt;
+```
+
+### ✍️ XML Code for Employee Information
+Based on your requirements:
+
+* Employee: name, address (multiple), phone, dept, website
+* Address has attribute type = permanent/temporary
+* Department has attribute extra
+* Phone must be 10 digits
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<employees>
+
+    <employee>
+
+        <name>Ram Bahadur</name>
+
+        <address type="permanent">Kathmandu, Nepal</address>
+        <address type="temporary">Lalitpur, Nepal</address>
+
+        <phone>9812345678</phone>
+
+        <department extra="IT">Computer Science</department>
+
+        <website>https://ramdev.com</website>
+
+    </employee>
+
+</employees>
+```
+
+### 🔹 Notes
+```xml
+* Root element: <employees>
+* Each employee is inside <employee>
+* Multiple <address> elements allowed
+* Attribute type used for address classification
+* Department has attribute extra
+* Phone is stored as 10-digit value (no spaces, no symbols)
+```
